@@ -6,6 +6,8 @@ A simple but powerful custom node for ComfyUI that allows you to select a predef
 
 这是一个为 ComfyUI 设计的简单而强大的自定义节点。它允许您从下拉菜单中选择一个预定义的风格，并将您输入的提示词应用到对应的模板中。这大大简化了风格切换的流程，无需再手动复制和粘贴复杂的提示词。
 
+![node_screenshot](https://github.com/aifeifei798/ComfyUI-Style-Selector-Node/blob/main/comfyui-1-3.png)
+
 ![node_screenshot](https://github.com/aifeifei798/ComfyUI-Style-Selector-Node/blob/main/comfyui-1-1.png)
 
 ![node_screenshot](https://github.com/aifeifei798/ComfyUI-Style-Selector-Node/blob/main/comfyui-1-2.png)
