@@ -8,6 +8,8 @@ A simple but powerful custom node for ComfyUI that allows you to select a predef
 
 ![node_screenshot](https://github.com/aifeifei798/ComfyUI-Style-Selector-Node/blob/main/comfyui-1-1.png)
 
+![node_screenshot](https://github.com/aifeifei798/ComfyUI-Style-Selector-Node/blob/main/comfyui-1-2.png)
+
 ---
 
 ## <a name="english"></a>English
