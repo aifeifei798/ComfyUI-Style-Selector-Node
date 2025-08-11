@@ -8,6 +8,9 @@
 # "name": 将会显示在节点的下拉菜单中。
 # "prompt": 正面提示词模板，"{prompt}" 将会被用户的输入替换。
 # "negative_prompt": 负面提示词模板。
+import random
+import time
+
 style_list = [
     {"name": "(None)", "prompt": "{prompt}", "negative_prompt": ""},
     {
@@ -3070,61 +3073,76 @@ class StyleSelectorNodeZhex:
     """
     一个自定义节点，它提供一个下拉菜单来选择一个风格，
     并将输入的文本应用到所选风格的提示词模板中。
+    当 "random_style" 开启时，每次生成都会自动随机选择一个新风格。
     """
-
-    # 从 style_list 中提取所有风格名称用于下拉菜单
+    
     style_names = [style["name"] for style in style_list]
 
     @classmethod
     def INPUT_TYPES(cls):
         """
         定义节点的输入。
-        - prompt: 用户输入的主要提示词。
-        - style_name: 一个下拉菜单，用于选择风格。
+        我们不再需要 seed 输入框了。
         """
         return {
             "required": {
-                "prompt": (
-                    "STRING",
-                    {"multiline": True, "default": "a beautiful landscape"},
-                ),
-                "style_name": (cls.style_names,),
+                "prompt": ("STRING", {"multiline": True, "default": "a beautiful landscape"}),
+                "style_name": (cls.style_names, ),
+                "random_style": ("BOOLEAN", {"default": False}),
             }
         }
 
     RETURN_TYPES = ("STRING", "STRING")
     RETURN_NAMES = ("positive_prompt", "negative_prompt")
     FUNCTION = "apply_style"
-    CATEGORY = "Utilities/Text"  # 节点将出现在 "Utilities/Text" 类别下
+    CATEGORY = "Utilities/Text"
 
-    def apply_style(self, prompt, style_name):
+    @classmethod
+    def IS_CHANGED(cls, prompt, style_name, random_style):
+        """
+        这个方法是实现自动随机的关键。
+        """
+        if random_style:
+            # 如果随机开关打开，我们返回一个纳秒级的时间戳。
+            # 这个值每次都保证是不同的，从而强制ComfyUI重新运行此节点。
+            return time.time_ns()
+        else:
+            # 如果随机开关关闭，我们返回一个固定的值。
+            # 这样ComfyUI就可以正常使用缓存。
+            return None
+
+    def apply_style(self, prompt, style_name, random_style): # 不再需要 seed 参数
         """
         节点的核心逻辑。
-        它接收用户输入和选择的风格名称，然后返回格式化后的提示词。
         """
+        selected_style = None
 
-        # 查找与所选 style_name 匹配的风格字典
-        selected_style = next(
-            (style for style in style_list if style["name"] == style_name), None
-        )
+        if random_style:
+            # 过滤掉 '(None)' 风格
+            eligible_styles = [s for s in style_list if s["name"] != "(None)"]
+            
+            if not eligible_styles:
+                selected_style = next((style for style in style_list if style["name"] == "(None)"), None)
+            else:
+                selected_style = random.choice(eligible_styles)
+            
+            if selected_style:
+                # 在控制台打印，方便调试和确认
+                print(f"[StyleSelectorNode] Auto-randomly selected style: {selected_style['name']}")
+
+        else:
+            # 如果不使用随机，则执行原始逻辑
+            selected_style = next((style for style in style_list if style["name"] == style_name), None)
 
         if selected_style:
-            # 获取正面和负面提示词模板
             prompt_template = selected_style["prompt"]
             negative_prompt_template = selected_style["negative_prompt"]
 
-            # 使用 .replace() 方法替换占位符，这比 .format() 更安全，
-            # 因为即时模板中没有 "{prompt}" 也不会报错。
             positive_prompt_out = prompt_template.replace("{prompt}", prompt)
             negative_prompt_out = negative_prompt_template.replace("{prompt}", prompt)
-
-            print(f"[StyleSelectorNodeZhex] Selected Style: {style_name}")
-            print(f"[StyleSelectorNodeZhex] Positive Prompt: {positive_prompt_out}")
-            print(f"[StyleSelectorNodeZhex] Negative Prompt: {negative_prompt_out}")
-
+            
             return (positive_prompt_out, negative_prompt_out)
         else:
-            # 如果找不到风格（理论上不应该发生），则返回原始输入
             return (prompt, "")
 
 
