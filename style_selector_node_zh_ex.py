@@ -13,6 +13,980 @@ import time
 
 style_list = [
     {"name": "(None)", "prompt": "{prompt}", "negative_prompt": ""},
+    # ========================
+    # 🌟 必选神仙光影 (Lighting)
+    # ========================
+    {
+        "name": "青春 - 迟到的转角 (转角遇到爱)",
+        "prompt": "{prompt}, school street corner, running late with toast in mouth (optional), bumping into viewer (POV), books flying in air, dynamic motion blur, surprised expression, blushing heavily, panties slightly visible (accidental), cherry blossoms falling, high key vibrant pastel colors, honeyworks mv aesthetic",
+        "negative_prompt": "static, boring, dark, horror, realistic violence",
+    },
+    {
+        "name": "青春 - 借一只耳机 (心跳距离)",
+        "prompt": "{prompt}, sitting on train or park bench, sharing one earphone with viewer (POV), wire connecting us, looking away shyly, face red, very close proximity, golden hour sunset lighting, lens flare, romantic atmosphere, shoujo manga vibe, heart skipping a beat",
+        "negative_prompt": "distant, sad, angry, wireless earbuds",
+    },
+    {
+        "name": "青春 - 鞋柜情书 (被发现了)",
+        "prompt": "{prompt}, standing in front of school shoe lockers (getabako), holding a love letter with both hands, startled expression looking at camera, caught in the act, morning sunlight, dust motes, nervous sweating, pure love aesthetic, school uniform",
+        "negative_prompt": "trash, dirty, night, scary",
+    },
+    {
+        "name": "青春 - 借物赛跑 (题目是你)",
+        "prompt": "{prompt}, school sports festival, scavenger hunt race, grabbing viewer's hand (POV) and running, looking back with a determined but shy smile, 'the item I need is you' concept, sweat, bright blue sky, motion lines, energetic youth",
+        "negative_prompt": "indoor, rain, static, slow",
+    },
+    {
+        "name": "青春 - 图书馆触碰 (手背重叠)",
+        "prompt": "{prompt}, library bookshelf, reaching for the same book as viewer (POV), hands touching, extreme close-up on face, wide eyes, startled blush, quiet atmosphere, soft dust particles, romantic tension, freeze frame moment",
+        "negative_prompt": "loud, party, fighting, far away",
+    },
+    {
+        "name": "青春 - 放学后的雨 (共撑一把伞)",
+        "prompt": "{prompt}, sharing one umbrella (aiaigasa), walking home in rain, wet school uniform, looking up at viewer, shoulder touching, shy happy smile, rain droplets, reflection on wet pavement, cinematic emotional lighting, honeyworks ballad style",
+        "negative_prompt": "sunny, dry, alone, distant",
+    },
+    {
+        "name": "青春 - 告白实行委员会 (练习)",
+        "prompt": "{prompt}, standing on school rooftop, sunset backdrop, shouting confession towards the ocean (or viewer), hands cupped around mouth, tears of nervousness in corners of eyes, emotional climax, wind blowing hair, vibrant orange and purple sky",
+        "negative_prompt": "indoor, night, calm, bored",
+    },
+    {
+        "name": "青春 - 视线交汇 (上课偷看)",
+        "prompt": "{prompt}, classroom setting, sitting at desk, resting chin on hand, looking at viewer (POV), suddenly realizing eye contact, flustered, trying to hide face with book, sunlight streaming through window, dreamy atmosphere",
+        "negative_prompt": "sleeping, studying hard, teacher",
+    },
+    {
+        "name": "王道 - 偶像MV (糖果甜美风)",
+        "prompt": "{prompt}, J-pop idol photography, twin tails with ribbons, frilly idol costume, pastel color palette, blooming flower garden background, soft diffused lighting, high key, vibrant but soft colors, kawaii aesthetic, commercial music video look, dreamy bokeh, doll-like makeup, heavy blush",
+        "negative_prompt": "dark, gloomy, low contrast, edgy, monochrome, realistic street, horror, gritty",
+    },
+    {
+        "name": "王道 - 动感舞蹈 (速度感)",
+        "prompt": "{prompt}, high energy dancing, dynamic pose, motion blur on hands and hair, hair flying in the air, skirt flowing, shutter speed priority, dynamic camera angle, dutch angle, stage lights trailing, energetic atmosphere",
+        "negative_prompt": "static, standing still, frozen, sharp focus everywhere",
+    },
+    {
+        "name": "王道 - 后台休息 (真实感)",
+        "prompt": "{prompt}, sitting in dressing room backstage, messy background with costumes and makeup tools, drinking water with a straw, towel around neck, sweating, tired but happy smile, looking at mirror reflection, candid off-shot, warm light bulb lighting",
+        "negative_prompt": "stage lights, performing, dancing, outdoor",
+    },
+    {
+        "name": "王道 - 闪耀舞台 (C位光环)",
+        "prompt": "{prompt}, live stage performance, standing center stage, sparkling confetti falling, stage spotlights, energetic dance pose, glistening sweat, vibrant stage costume, concert atmosphere, fans lightsticks in background blur",
+        "negative_prompt": "dark, static, boring, empty audience",
+    },
+    {
+        "name": "王道 - 夏日泳池 (清凉MV)",
+        "prompt": "{prompt}, summer idol music video, poolside dancing, blue sky and white clouds, water splashing, high key lighting, bright cyan and white theme, swimsuit or summer dress, energetic smile, refreshing atmosphere, lens flare",
+        "negative_prompt": "winter, dark, cloudy, indoor",
+    },
+    {
+        "name": "王道 - 梦幻爱丽丝 (童话风)",
+        "prompt": "{prompt}, fantasy fairytale theme, Alice in Wonderland style, giant flowers and mushrooms prop, pastel lolita dress, tea party setting, soft dreamy filter, magical atmosphere, whimsical, storybook aesthetic",
+        "negative_prompt": "realistic, gritty, urban, sci-fi",
+    },
+    {
+        "name": "王道 - 樱花毕业季 (伤感风)",
+        "prompt": "{prompt}, under cherry blossom trees, falling sakura petals, school uniform with cardigan, emotional expression, singing ballad, soft pink filter, spring breeze, sentimental atmosphere, crying but beautiful, lens haze",
+        "negative_prompt": "happy, energetic, summer, green leaves",
+    },
+    {
+        "name": "王道 - 情人节特辑 (巧克力)",
+        "prompt": "{prompt}, valentine's day special, holding handmade chocolate heart, kitchen studio set, wearing apron over cute outfit, red and pink ribbons, warm lighting, shy expression, sweet romantic mood, soft focus",
+        "negative_prompt": "cold colors, blue, cool tone",
+    },
+    {
+        "name": "王道 - 纯白天使 (圣洁风)",
+        "prompt": "{prompt}, wearing white angel costume with wings, feathers floating in air, heavenly bright white background, strong bloom effect, ethereal lighting, angelic smile, pure and innocent look, high exposure",
+        "negative_prompt": "black, dark, devil, red",
+    },
+    {
+        "name": "王道 - 校园天台 (青春喊话)",
+        "prompt": "{prompt}, school rooftop, blue sky background, shouting to the ocean, wind blowing hair, seishun drama style, school uniform, lens flare, wide angle shot, energetic and emotional, youth movie vibe",
+        "negative_prompt": "night, indoor, rain",
+    },
+    {
+        "name": "王道 - 睡衣派对 (私房感)",
+        "prompt": "{prompt}, pajama party MV scene, wearing fluffy cute roomwear, sitting on bed with stuffed animals, pastel balloons, soft bedroom lighting, intimate camera angle, playful and relaxed, girly room",
+        "negative_prompt": "outdoor, formal wear, suit",
+    },
+    {
+        "name": "王道 - 圣诞限定 (冬日恋歌)",
+        "prompt": "{prompt}, christmas idol special, santa claus inspired cute costume, snowy background, christmas lights bokeh, holding candle or gift, winter breath vapor, romantic holiday atmosphere, sparkling night",
+        "negative_prompt": "summer, beach, sun",
+    },
+    {
+        "name": "王道 - 酷飒甜心 (Girl Crush)",
+        "prompt": "{prompt}, cool and cute style, black and pink costume, neon studio lighting, confident expression, k-pop influence, geometric background, sharp focus, fashion editorial look, edgy but kawaii",
+        "negative_prompt": "soft, blurry, traditional, vintage",
+    },
+    {
+        "name": "王道 - 泡泡浴缸 (缤纷色彩)",
+        "prompt": "{prompt}, inside a bathtub filled with colorful plastic balls and balloons, playful expression, vibrant pop colors, overhead shot, music video aesthetic, candy color palette, bright studio light",
+        "negative_prompt": "water, real bath, nudity, dark",
+    },
+    {
+        "name": "王道 - 昭和复古 (80年代偶像)",
+        "prompt": "{prompt}, vintage photograph, 35mm film photo, flash photography, grainy texture, 1980s japanese idol, Matsuda Seiko hairstyle, soft focus lens, studio portrait, starry filter effect, nostalgic hazy look, pastel dress, vintage tv show quality",
+        "negative_prompt": "4k, sharp, modern, digital",
+    },
+    {
+        "name": "王道 - 啦啦队 (元气应援)",
+        "prompt": "{prompt}, cheerleader costume, holding pom-poms, sports stadium background, jumping pose, high energy, dynamic angle, bright sunlight, sweat, cheering for you, genki girl",
+        "negative_prompt": "tired, sad, sitting, night",
+    },
+    {
+        "name": "王道 - 教室课桌 (同桌的你)",
+        "prompt": "{prompt}, sitting at school desk, looking at camera (POV), sunlight streaming through window, dust motes, classroom background, daydreaming expression, innocent crush vibe, soft shadows",
+        "negative_prompt": "teacher, dark, horror",
+    },
+    {
+        "name": "王道 - 哥特萝莉 (暗黑童话)",
+        "prompt": "{prompt}, gothic lolita fashion, black frills and ribbons, holding a red rose, mysterious garden background, dark fantasy atmosphere, dramatic lighting, doll-like makeup, elegant pose",
+        "negative_prompt": "casual, sunny, happy, sport",
+    },
+    {
+        "name": "王道 - 镜面舞蹈 (练习室)",
+        "prompt": "{prompt}, dance practice studio, mirror reflection, wearing training wear (jersey), sweat, focused expression, dance studio lighting, candid behind the scenes look, hard work theme",
+        "negative_prompt": "stage costume, concert, outdoor",
+    },
+    {
+        "name": "王道 - 夏日祭浴衣 (花火)",
+        "prompt": "{prompt}, wearing floral yukata, holding festival fan, night festival background with bokeh lanterns, turning back to look at viewer, soft flash photography, traditional japanese summer vibe",
+        "negative_prompt": "western clothes, day time, winter",
+    },
+    {
+        "name": "王道 - 公主茶会 (洛可可)",
+        "prompt": "{prompt}, rococo style garden tea party, elegant princess dress, eating cake, white table and chairs, soft sunlight, pastel floral background, high society ojou-sama vibe, elegant",
+        "negative_prompt": "poor, dirty, messy, dark",
+    },
+    {
+        "name": "王道 - 雨中独舞 (透明伞)",
+        "prompt": "{prompt}, dancing in the rain, holding clear umbrella, splashing water, dramatic backlighting, wet hair, emotional performance, blue and purple tones, cinematic music video shot",
+        "negative_prompt": "sunny, dry, happy",
+    },
+    {
+        "name": "王道 - 终场定格 (Ending Pose)",
+        "prompt": "{prompt}, final ending pose of a concert, heavy breathing, looking directly at camera, extreme close-up, sweating, confetti stuck on hair, emotional smile, stage lights flaring behind, ending credit vibe",
+        "negative_prompt": "beginning, clean, dry",
+    },
+    {
+        "name": "王道 - 握手会 (神对应)",
+        "prompt": "{prompt}, idol handshake event, view across the table, leaning forward to hold hands, plastic partition (optional), eye contact, very close proximity, genuine happy smile, blurred fans in background, indoor event hall lighting, POV shot",
+        "negative_prompt": "distant, stage, dancing, angry",
+    },
+    {
+        "name": "王道 - 签名拍立得 (物贩)",
+        "prompt": "{prompt}, holding a sharpie marker, signing on a instax photo, looking up at camera, close-up shot, cute doodle on face, backstage or event booth background, interaction vibe, personal gift",
+        "negative_prompt": "far away, full body, landscape",
+    },
+    {
+        "name": "王道 - 直播营业 (Showroom)",
+        "prompt": "{prompt}, smartphone selfie camera angle, vertical aspect ratio, wearing loungewear or casual clothes, ring light reflection in eyes, bedroom background, waving hand, reading comments, streaming interface overlay style, cozy atmosphere",
+        "negative_prompt": "professional camera, studio, outdoor",
+    },
+    {
+        "name": "王道 - 喂食视点 (啊~)",
+        "prompt": "{prompt}, holding a spoon or fork with food towards camera (Saying Ahh), restaurant or cafe date, girlfriend POV, focus on face and food, blurred background, sweet expression, bokeh",
+        "negative_prompt": "eating alone, messy, wide shot",
+    },
+    {
+        "name": "王道 - 惊喜礼物 (递给你)",
+        "prompt": "{prompt}, holding a wrapped gift box towards camera with both hands, shy blushing expression, bowing slightly, valentine or birthday vibe, school corridor or park background, confessing love, soft lighting",
+        "negative_prompt": "taking gift, angry, rejecting",
+    },
+    {
+        "name": "王道 - 车站送别 (不要走)",
+        "prompt": "{prompt}, standing at train station platform, wearing coat and scarf, waving goodbye, teary eyes but smiling, train leaving in background, shinkansen, emotional cinematic shot, blue hour lighting",
+        "negative_prompt": "happy, party, indoor, studio",
+    },
+    {
+        "name": "王道 - 赖床女友 (早安)",
+        "prompt": "{prompt}, lying in white bed sheets, rubbing eyes, messy morning hair, oversized white t-shirt, morning sunlight leaks, soft exposure, intimate POV, looking at viewer, pure and defenseless",
+        "negative_prompt": "night, dark, heavy makeup, dress",
+    },
+    {
+        "name": "王道 - 电车偶遇 (上学路)",
+        "prompt": "{prompt}, sitting in japanese commuter train, school uniform, holding a school bag on lap, listening to music with earphones, looking out window then turning to camera, morning rush hour light, slice of life",
+        "negative_prompt": "empty train, night, horror",
+    },
+    {
+        "name": "王道 - 游乐园约会 (旋转木马)",
+        "prompt": "{prompt}, sitting on a merry-go-round horse, night time amusement park, glowing lights, looking back at camera, laughing, bokeh light bubbles, romantic date vibe, fairytale atmosphere",
+        "negative_prompt": "scary, day time, plain background",
+    },
+    {
+        "name": "王道 - 躲猫猫 (偷看)",
+        "prompt": "{prompt}, peeking from behind a curtain or wall, playful expression, hiding face partially, indoor studio, soft natural light, mischievous cute vibe, close up",
+        "negative_prompt": "full body, far away, serious",
+    },
+    {
+        "name": "王道 - 赛博歌姬 (电音风)",
+        "prompt": "{prompt}, futuristic idol costume, holographic vinyl material, neon geometric background, laser beams, technopop perfume style, cool expression, cyan and magenta lighting, digital art aesthetic",
+        "negative_prompt": "vintage, rustic, nature, soft",
+    },
+    {
+        "name": "王道 - 摇滚甜心 (朋克风)",
+        "prompt": "{prompt}, plaid skirt, leather jacket, holding an electric guitar, standing in a garage studio, rebellious but cute, avril lavigne style, dynamic angle, concert lighting, punk rock idol",
+        "negative_prompt": "soft, elegant, traditional, quiet",
+    },
+    {
+        "name": "王道 - 魔法少女 (变身)",
+        "prompt": "{prompt}, magical girl transformation sequence, glowing ribbons and stars, floating in space, frilly battle costume, anime style effects, dynamic pose, vibrant rainbow colors, sailor moon vibe",
+        "negative_prompt": "realistic, dark, gritty, plain",
+    },
+    {
+        "name": "王道 - 森之精灵 (森女系)",
+        "prompt": "{prompt}, wearing white cotton dress, barefoot, deep green forest background, sunbeams through trees (tyndall effect), holding a fern or flower, organic natural makeup, ethereal pure atmosphere",
+        "negative_prompt": "urban, concrete, studio, flash",
+    },
+    {
+        "name": "王道 - 昭和不良 (太妹风)",
+        "prompt": "{prompt}, sukeban style long skirt school uniform, sailor collar, holding a wooden sword, leaning on graffiti wall, defiant expression, retro 80s film grain, warm sunset lighting, dramatic shadow",
+        "negative_prompt": "cute, happy, smiling, modern",
+    },
+    {
+        "name": "王道 - 侦探少女 (推理风)",
+        "prompt": "{prompt}, wearing sherlock holmes style cape and hat, holding a magnifying glass, library background, curious expression, sepia tone filter, mystery novel cover style, intellectual cute",
+        "negative_prompt": "sporty, beach, swimsuit, neon",
+    },
+    {
+        "name": "王道 - 旗袍丸子头 (中华风)",
+        "prompt": "{prompt}, modernized cute cheongsam (qipao), odango hair buns, holding a dim sum steamer, chinatown neon background, vibrant red and gold colors, festive energetic vibe, kung fu pose",
+        "negative_prompt": "traditional, dark, sad, dull",
+    },
+    {
+        "name": "王道 - 喵喵女仆 (猫耳娘)",
+        "prompt": "{prompt}, wearing cat ears and maid outfit, paw pose, huge bell choker, pastel pink room background, floating yarn balls, anime aesthetic, super kawaii, soft focus",
+        "negative_prompt": "realistic animal, horror, dark",
+    },
+    {
+        "name": "王道 - 蒸汽波 (Vaporwave)",
+        "prompt": "{prompt}, 90s anime aesthetic, pastel purple and blue gradient, glitch art effect, statue bust props, palm trees, nostalgic lo-fi vibe, retro computer graphics background, dreamy gaze",
+        "negative_prompt": "hd, sharp, realistic, modern",
+    },
+    {
+        "name": "王道 - 提线木偶 (人偶风)",
+        "prompt": "{prompt}, posing like a marionette doll, strings attached to limbs (optional), ball jointed doll makeup, gothic theater stage background, stiff but elegant pose, surreal artistic vibe, spotlight",
+        "negative_prompt": "natural movement, running, candid",
+    },
+    {
+        "name": "王道 - 一日署长 (女警)",
+        "prompt": "{prompt}, police uniform with mini skirt, saluting pose, standing in front of police car, handcuffs on belt, bright day light, authoritative but cute, justice vibe, official event photo",
+        "negative_prompt": "bloody, criminal, dark, night",
+    },
+    {
+        "name": "王道 - 治愈天使 (护士)",
+        "prompt": "{prompt}, pastel pink nurse uniform, holding a clipboard or giant syringe prop, white hospital studio set, caring smile, soft high key lighting, dreamy medical theme, clean aesthetic",
+        "negative_prompt": "scary, blood, dirty, horror",
+    },
+    {
+        "name": "王道 - 元气店员 (快餐店)",
+        "prompt": "{prompt}, american diner waitress uniform, roller skates, holding a milkshake tray, checkered floor, neon jukebox background, 50s retro pop vibe, bubblegum colors, energetic smile",
+        "negative_prompt": "dark, fancy restaurant, sad",
+    },
+    {
+        "name": "王道 - 巫女祈福 (新年)",
+        "prompt": "{prompt}, traditional japanese miko outfit (red hakama white top), holding a omamori charm, shinto shrine background, falling snow, serene expression, new year wish, spiritual atmosphere",
+        "negative_prompt": "modern, neon, western clothes",
+    },
+    {
+        "name": "王道 - 乘务员 (空姐)",
+        "prompt": "{prompt}, flight attendant uniform, scarf around neck, pulling a carry-on suitcase, airport terminal background, walking confidently, travel show vibe, professional elegance",
+        "negative_prompt": "messy, casual, home, sleeping",
+    },
+    {
+        "name": "王道 - 棒球经理 (运动系)",
+        "prompt": "{prompt}, wearing baseball team jersey and cap, holding a clipboard and whistle, baseball dugout background, watching the game, sunset golden hour, youth sports drama vibe, ponytail",
+        "negative_prompt": "indoor, studio, dark, night",
+    },
+    {
+        "name": "王道 - 美术生 (画室)",
+        "prompt": "{prompt}, wearing apron covered in colorful paint, holding a palette and brush, art studio background with canvas, paint on cheek, creative messy vibe, warm light, artistic",
+        "negative_prompt": "clean, sterile, office, suit",
+    },
+    {
+        "name": "王道 - 图书委员 (文学少女)",
+        "prompt": "{prompt}, school library background, standing between bookshelves, wearing glasses, holding a heavy book, shushing gesture (finger on lips), quiet atmosphere, intellectual beauty",
+        "negative_prompt": "loud, party, sport, outdoor",
+    },
+    {
+        "name": "王道 - 实验课 (理科女)",
+        "prompt": "{prompt}, wearing white lab coat, protective goggles, holding a test tube with colored liquid, chemistry classroom background, curious expression, science experiment vibe, bright lighting",
+        "negative_prompt": "dark, magic, fantasy, outdoor",
+    },
+    {
+        "name": "王道 - 婚礼幻想 (花嫁)",
+        "prompt": "{prompt}, pure white wedding dress, holding a bouquet of white roses, chapel background with stained glass, veil lifting, shy happy smile, ideal bride concept, soft glow effect",
+        "negative_prompt": "black dress, funeral, sad, gothic",
+    },
+    {
+        "name": "王道 - 录音棚 (认真模式)",
+        "prompt": "{prompt}, wearing large professional headphones, standing in front of pop filter microphone, recording studio booth, sheet music in hand, serious singing expression, dimly lit with mood lighting, artist vibe",
+        "negative_prompt": "dancing, stage, outdoor, playful",
+    },
+    {
+        "name": "王道 - 烟火大会 (仙女棒)",
+        "prompt": "{prompt}, holding a sparkler firework, beach at night, sparks flying, illuminating face with warm glow, yukata or summer dress, emotional nostalgic vibe, summer memory",
+        "negative_prompt": "day time, bright sun, studio",
+    },
+    {
+        "name": "王道 - 水族馆 (蓝色梦境)",
+        "prompt": "{prompt}, silhouette against a giant aquarium tank, blue ambient lighting, watching fish and jellyfish, reflection on glass, quiet romantic date, dreamy and mysterious, side profile",
+        "negative_prompt": "bright white light, outdoor, park",
+    },
+    {
+        "name": "王道 - 街机厅 (夹娃娃)",
+        "prompt": "{prompt}, standing in front of UFO catcher machine, pressing buttons, colorful neon arcade lights, reflection on glass, focused cute expression, playful date vibe, vibrant colors",
+        "negative_prompt": "nature, forest, rustic, quiet",
+    },
+    {
+        "name": "王道 - 甜品探店 (吃货)",
+        "prompt": "{prompt}, sitting at a trendy cafe, giant pancake or parfait on table, holding fork, happy foodie expression, bright window natural light, pastel interior, casual date",
+        "negative_prompt": "dark, bar, alcohol, night",
+    },
+    {
+        "name": "王道 - 河提骑行 (风)",
+        "prompt": "{prompt}, riding a bicycle along the river bank, wind blowing hair and skirt, blue sky and green grass, wide angle shot, energetic youth, anime opening theme vibe, motion blur",
+        "negative_prompt": "indoor, stationary, night, rain",
+    },
+    {
+        "name": "王道 - 豪车派对 (名流感)",
+        "prompt": "{prompt}, sitting inside a stretch limousine, holding a glass of champagne (or juice), party dress, disco lights inside, luxury leather seats, night out vibe, rich idol aesthetic",
+        "negative_prompt": "bus, train, cheap, dirty",
+    },
+    {
+        "name": "王道 - 雪夜围巾 (呼气)",
+        "prompt": "{prompt}, thick knitted scarf covering mouth, winter coat, snowing at night, street lights, white breath vapor visible, cold but cozy, waiting for someone, romantic winter drama",
+        "negative_prompt": "summer, sweat, beach, swimsuit",
+    },
+    {
+        "name": "王道 - 逆光剪影 (登场前)",
+        "prompt": "{prompt}, silhouette shot, standing at the entrance of stage curtain, bright stage lights beaming through, back view or side view, outline of body, anticipation atmosphere, atmospheric",
+        "negative_prompt": "front view, clear face, flat lighting",
+    },
+    {
+        "name": "王道 - 庆功宴 (干杯)",
+        "prompt": "{prompt}, holding a glass for a toast (kanpai), restaurant background, blurred food dishes, cheerful smile, looking at camera, casual clothes, after party vibe, warm izakaya lighting",
+        "negative_prompt": "stage, formal, serious, sad",
+    },
+    {
+        "name": "过渡 - 连帽衫下的秘密 (Hoodie & Bikini)",
+        "prompt": "{prompt}, wearing an oversized grey zip-up hoodie (unzipped), colorful bikini visible underneath, casual street fashion, standing on balcony, morning sunlight, shy smile, pulling hoodie strings, boyfriend POV, gap moe (contrast)",
+        "negative_prompt": "nudity, nipples, lewd, dark, dirty",
+    },
+    {
+        "name": "过渡 - 湿身白衬衫 (Wet Shirt)",
+        "prompt": "{prompt}, wearing an oversized white dress shirt, soaked with water, translucent fabric sticking to skin, swimsuit or lingerie faintly visible underneath, beach or pool background, playful splashing, high key lighting, summer gravure style",
+        "negative_prompt": "dry, thick fabric, full nudity",
+    },
+    {
+        "name": "过渡 - 瑜伽伸展 (Yoga Time)",
+        "prompt": "{prompt}, wearing tight yoga leggings and sports bra, doing stretching exercise on yoga mat, living room background, sweat on skin, body curves highlighted by lighting, healthy beauty, ponytail, focus on fitness",
+        "negative_prompt": "bed, lingerie, sexual act, messy",
+    },
+    {
+        "name": "过渡 - 晨跑结束 (Jogging)",
+        "prompt": "{prompt}, wearing running shorts and crop top, drinking water from bottle, park background, morning sun, sweating, heavy breathing, dynamic angle, healthy thighs, energetic vibe",
+        "negative_prompt": "night, indoor, dark, pajamas",
+    },
+    {
+        "name": "过渡 - 温泉裹巾 (Onsen Mist)",
+        "prompt": "{prompt}, wrapped in a white bath towel, sitting on the edge of open-air hot spring (onsen), steam rising, snowy scenery in background, blushing cheeks, wet hair, skin glistening, japanese gravure aesthetic, soft focus",
+        "negative_prompt": "swimsuit, modern pool, western bath",
+    },
+    {
+        "name": "过渡 - 刚睡醒 (Oversized T)",
+        "prompt": "{prompt}, wearing only a very long oversized t-shirt, sitting on bed with knees up (no panty shot), messy hair, rubbing eyes, thighs visible, soft morning light, innocent but suggestive, girlfriend pov",
+        "negative_prompt": "pants, jeans, dress, dark",
+    },
+    {
+        "name": "日系雨夜透明伞 (电影感)",
+        "prompt": "{prompt}, holding a clear vinyl umbrella, rainy night in Tokyo, rain droplets, neon lights reflecting on wet street, cinematic bokeh, emotional atmosphere, street photography, sharp focus on face, glowing city background",
+        "negative_prompt": "sunny, dry, daytime, opaque umbrella",
+    },
+    {
+        "name": "日系深夜便利店 (生活感)",
+        "prompt": "{prompt}, inside a japanese convenience store (konbini), holding a drink or snack, standing in front of colorful product shelves, bright fluorescent lighting, glass reflection, candid shot, late night vibe, clear facial features",
+        "negative_prompt": "dark, dim lighting, empty shelves, horror",
+    },
+    {
+        "name": "日系对镜自拍 (OOTD风)",
+        "prompt": "{prompt}, mirror selfie, holding smartphone covering face, reflection in mirror, bathroom mirror or fitting room, flash reflection on glass, focus on outfit, messy room background, daily life vibe, casual aesthetic",
+        "negative_prompt": "camera lens visible, professional studio, no phone",
+    },
+    {
+        "name": "日系JK手机自拍 (大头贴风)",
+        "prompt": "{prompt}, selfie shot, holding camera, wide angle, shot on iPhone, flash photography, messy hair, playful, candid moment, social media quality, slight motion blur",
+        "negative_prompt": "professional lighting, tripod, perfect posture",
+    },
+    {
+        "name": "日系灵魂特写 (极致细节)",
+        "prompt": "{prompt}, photography, visible eyelashes, detailed skin texture, sunlight hitting the face, emotional expression, 8k resolution, raw photo",
+        "negative_prompt": "blur, low resolution, painting, illustration",
+    },
+    {
+        "name": "日系清新 (透明感)",
+        "prompt": "{prompt}, Japanese photography style, high key lighting, soft natural light, clean background, slight overexposure, low contrast, airy atmosphere, pale cyan and white tones, transparent feel",
+        "negative_prompt": "heavy shadows, high contrast, dark atmosphere, grunge",
+    },
+    {
+        "name": "日系木漏れ日 (树隙光)",
+        "prompt": "{prompt}, komorebi, dappled sunlight filtering through trees, shadows of leaves on face, peaceful nature atmosphere, sunspots, gentle breeze feeling, 35mm film look",
+        "negative_prompt": "studio lighting, artificial light, harsh shadows",
+    },
+    {
+        "name": "日系蓝调时刻 (清冷情绪)",
+        "prompt": "{prompt}, blue hour photography, cold color temperature, melancholic atmosphere, dim lighting, soft twilight, cinematic teal tones, emotional movie scene, solitude",
+        "negative_prompt": "warm colors, sunset, bright sunlight, cheerful",
+    },
+    {
+        "name": "日系唯美逆光 (夕阳)",
+        "prompt": "{prompt}, golden hour, strong backlight, rim light, sun flare, lens flare, warm haze, silhouette, romantic atmosphere, emotional, glowing hair",
+        "negative_prompt": "flat lighting, front lighting, cool colors",
+    },
+    {
+        "name": "日系昭和胶片 (怀旧风)",
+        "prompt": "{prompt}, retro japanese film look, showa era style, film grain, noise, faded colors, nostalgic mood, warm vintage filter, slightly blurred, fujifilm simulation",
+        "negative_prompt": "4k, sharp focus, digital clean look, modern style",
+    },
+    {
+        "name": "日系窗边侧光 (生活感)",
+        "prompt": "{prompt}, soft window light, side lighting, sheer curtains, indoor slice of life, cozy atmosphere, domestic setting, natural shadows, intimate feel, Hirokazu Kore-eda style",
+        "negative_prompt": "outdoor, dramatic lighting, fantasy",
+    },
+    {
+        "name": "日系雨夜霓虹 (都市忧郁)",
+        "prompt": "{prompt}, rainy night in Tokyo, wet street reflections, neon lights reflecting on wet surfaces, bokeh city lights, umbrella, cyberpunk vibes but realistic, moody cinematic lighting",
+        "negative_prompt": "daytime, dry, countryside, sunshine",
+    },
+    {
+        "name": "日系自动贩卖机 (孤独光源)",
+        "prompt": "{prompt}, illuminated by vending machine light, night street, soft artificial glow on face, cold fluorescence, urban loneliness, cinematic night scene, dark surroundings",
+        "negative_prompt": "sunlight, natural light, bright background",
+    },
+    {
+        "name": "日系夏日过曝 (青春感)",
+        "prompt": "{prompt}, intense summer sunlight, blinding white sky, high contrast, vibrant greens and blues, sweat, heat haze, youth drama style, energetic, overexposed highlights",
+        "negative_prompt": "winter, snow, dark, cloudy",
+    },
+    {
+        "name": "日系教室自然光 (校园剧)",
+        "prompt": "{prompt}, classroom setting, sunlight through windows, dust motes, chalk dust, nostalgic school life, soft shadows, afternoon atmosphere, seishun (youth) drama vibes",
+        "negative_prompt": "night, office, horror",
+    },
+    {
+        "name": "日系花火大会 (多彩面光)",
+        "prompt": "{prompt}, illuminated by fireworks, colorful light reflections on face, yukata, night festival, dark sky background, festive but emotional, soft colorful glow, bokeh fireworks",
+        "negative_prompt": "daytime, white light, studio light",
+    },
+    {
+        "name": "日系电车通勤 (冷淡风)",
+        "prompt": "{prompt}, subway train interior, fluorescent ceiling lights, reflection in glass window, sterile atmosphere, cool tones, motion blur background, urban solitude, cinematic shot",
+        "negative_prompt": "warm lighting, cozy, nature",
+    },
+    {
+        "name": "日系海边朦胧 (空气感)",
+        "prompt": "{prompt}, seaside, overcast sky, diffused soft light, misty horizon, pale blue and grey tones, windblown hair, melancholic seascape, soft focus, ethereal",
+        "negative_prompt": "bright sun, saturated colors, sharp details",
+    },
+    {
+        "name": "日系居酒屋 (暖调灯笼)",
+        "prompt": "{prompt}, izakaya interior, warm lantern lighting, orange and red tones, dim ambient light, bokeh bottles background, lively but cozy, intimate depth of field",
+        "negative_prompt": "cold light, blue tones, clinical",
+    },
+    {
+        "name": "日系柔光人像 (少女漫改)",
+        "prompt": "{prompt}, soft focus filter, bloom effect, glowing skin, angelic lighting, dreamy romance, shoujo manga live action style, pastel color palette, gentle atmosphere",
+        "negative_prompt": "gritty, realistic texture, hard contrast",
+    },
+    {
+        "name": "日系隧道光影 (对比构图)",
+        "prompt": "{prompt}, inside a tunnel, silhouette against bright exit, green fluorescent tunnel lights, symmetrical composition, cinematic depth, mystery, road movie vibe",
+        "negative_prompt": "cluttered, flat lighting",
+    },
+    {
+        "name": "日系雪景散射 (纯白世界)",
+        "prompt": "{prompt}, snowy day, overcast lighting, diffuse white light, low contrast, muted colors, soft texture, silent atmosphere, Love Letter (movie) vibe, breath vapor",
+        "negative_prompt": "sunny, colorful, high contrast",
+    },
+    {
+        "name": "日系便利店流光 (现代生活)",
+        "prompt": "{prompt}, convenience store interior, bright fluorescent strips, clean white lighting, colorful product shelves background, glass reflections, modern japan daily life",
+        "negative_prompt": "dim, vintage, dirty",
+    },
+    {
+        "name": "日系黄昏魔术时刻 (紫霞)",
+        "prompt": "{prompt}, magic hour, purple and pink sky gradients, fading light, silhouettes, anime background style (Makoto Shinkai style), dramatic clouds, sentimental atmosphere",
+        "negative_prompt": "midday, pure blue sky, pitch black",
+    },
+    {
+        "name": "日系胶卷漏光 (艺术MV)",
+        "prompt": "{prompt}, heavy light leaks, film burn effects, artistic experimental photography, prism refraction, random color overlay, vintage music video style, imperfect aesthetic",
+        "negative_prompt": "clean image, digital perfection, standard lighting",
+    },
+    {
+        "name": "日系赛博歌姬 (未来科幻)",
+        "prompt": "{prompt}, cyberpunk tokyo, futuristic idol costume, neon glowing headphones, holographic interface, chromatic aberration, rainy neon street background, mechanical details, cool blue and purple lighting, sci-fi movie atmosphere, cinematic composition",
+        "negative_prompt": "vintage, rustic, natural, warm colors",
+    },
+    {
+        "name": "日系绝美和服 (大和抚子)",
+        "prompt": "{prompt}, wearing elaborate colorful kimono with gold patterns, traditional japanese hairstyle with kanzashi hair ornaments, standing in a tatami room, sliding doors (shoji) background, falling cherry blossoms, soft warm lantern light, elegant pose, mysterious japanese beauty, cinematic historical drama vibe",
+        "negative_prompt": "modern clothes, glasses, neon lights, messy background",
+    },
+    {
+        "name": "空气透视 (丁达尔光)",
+        "prompt": "{prompt}, floating dust particles in the light rays, tyndall effect, hazy atmosphere, god rays, volumetric lighting",
+        "negative_prompt": "",
+    },
+    {
+        "name": "梦幻景深 (大光圈)",
+        "prompt": "{prompt}, Macro photography, extreme close-up, bokeh background, shallow depth of field, f/1.8 aperture, dreamy light leaks",
+        "negative_prompt": "",
+    },
+    {
+        "name": "伦勃朗光 (经典人像)",
+        "prompt": "{prompt}, Rembrandt lighting, chiaroscuro, dramatic shadows, artistic contrast, masterpiece",
+        "negative_prompt": "",
+    },
+    {
+        "name": "爱心光斑 (创意)",
+        "prompt": "{prompt}, heart shaped bokeh, shaped bokeh background, romantic atmosphere, night city background, f/1.2",
+        "negative_prompt": "",
+    },
+    {
+        "name": "电影侧逆光 (轮廓光)",
+        "prompt": "{prompt}, backlit, rim lighting, golden halo effect around hair, silhouette against light, cinematic atmosphere",
+        "negative_prompt": "",
+    },
+    {
+        "name": "柔光箱摄影 (商业大片)",
+        "prompt": "{prompt}, soft lighting, beauty dish, professional fashion photography, even lighting, flawless skin",
+        "negative_prompt": "",
+    },
+    {
+        "name": "赛博霓虹 (夜景)",
+        "prompt": "{prompt}, cyberpunk city night, neon lights reflection, blue and purple color grading, wet street, futuristic vibe",
+        "negative_prompt": "",
+    },
+    {
+        "name": "情绪侧写 (Profile)",
+        "prompt": "{prompt}, side profile, looking away, emotional expression, rim lighting, storytelling, cinematic composition, magical atmosphere",
+        "negative_prompt": "looking at camera, front view",
+    },
+    {
+        "name": "黄金时刻 (夕阳)",
+        "prompt": "{prompt}, golden hour lighting, warm sunlight, sunset glow, long shadows, romantic atmosphere, lens flare",
+        "negative_prompt": "",
+    },
+    {
+        "name": "蓝色时刻 (清晨/黄昏)",
+        "prompt": "{prompt}, blue hour, moody cold tones, dim lighting, cinematic color grading, melancholic vibe",
+        "negative_prompt": "",
+    },
+    {
+        "name": "自然窗光 (居家感)",
+        "prompt": "{prompt}, natural sunlight streaming through window, soft shadows, cozy indoor atmosphere, morning vibe",
+        "negative_prompt": "",
+    },
+    {
+        "name": "暗调奢华 (Low Key)",
+        "prompt": "{prompt}, low key lighting, dark background, mysterious atmosphere, elegant shadows, noir style",
+        "negative_prompt": "",
+    },
+    # ========================
+    # 📸 摄影与胶片质感 (Film Stocks)
+    # ========================
+    {
+        "name": "Kodak Portra 400 (人像胶片)",
+        "prompt": "{prompt}, shot on Kodak Portra 400, warm grain, analog photography, vintage film look, nostalgic",
+        "negative_prompt": "",
+    },
+    {
+        "name": "Fujifilm Velvia (日系清冷)",
+        "prompt": "{prompt}, shot on Fujifilm Velvia, vivid colors, slight green tint, japanese aesthetic, clean and crisp",
+        "negative_prompt": "",
+    },
+    {
+        "name": "Polaroid (拍立得)",
+        "prompt": "{prompt}, Polaroid vintage photo, camera flash, soft focus, vignette, instant film aesthetic, candid shot",
+        "negative_prompt": "",
+    },
+    {
+        "name": "徕卡黑白 (Monochrome)",
+        "prompt": "{prompt}, black and white photography, Leica M6, high contrast, grain, emotional, timeless",
+        "negative_prompt": "",
+    },
+    {
+        "name": "一次性相机 (闪光灯)",
+        "prompt": "{prompt}, disposable camera, direct flash, harsh lighting, 90s party vibe, candid, raw aesthetics",
+        "negative_prompt": "",
+    },
+    {
+        "name": "8mm 电影胶片 (复古)",
+        "prompt": "{prompt}, Super 8mm film frame, film grain, scratches, dust, vintage movie look, color bleed",
+        "negative_prompt": "",
+    },
+    {
+        "name": "Lomography (Lomo风格)",
+        "prompt": "{prompt}, Lomography style, oversaturated colors, heavy vignette, cross processing, experimental",
+        "negative_prompt": "",
+    },
+    {
+        "name": "GoPro (广角)",
+        "prompt": "{prompt}, GoPro wide angle shot, fisheye lens effect, immersive perspective, action camera",
+        "negative_prompt": "",
+    },
+    {
+        "name": "CCTV (监控视角)",
+        "prompt": "{prompt}, CCTV footage, security camera view, grainy, low resolution style, timestamp overlay, surveillance",
+        "negative_prompt": "",
+    },
+    {
+        "name": "湿版摄影 (古董感)",
+        "prompt": "{prompt}, Wet plate collodion photography, vintage 19th century style, imperfections, silver plate texture",
+        "negative_prompt": "",
+    },
+    # ========================
+    # 🎨 艺术与插画风格 (Art Styles)
+    # ========================
+    {
+        "name": "油画 (古典)",
+        "prompt": "{prompt}, classic oil painting, visible brushstrokes, textured canvas, renaissance style, masterpiece",
+        "negative_prompt": "photo, realistic",
+    },
+    {
+        "name": "水彩画 (清新)",
+        "prompt": "{prompt}, watercolor painting, soft edges, pastel colors, artistic splatter, wet on wet technique",
+        "negative_prompt": "photo, realistic",
+    },
+    {
+        "name": "新海诚 (动漫背景)",
+        "prompt": "{prompt}, anime style, Makoto Shinkai style, highly detailed clouds, vibrant blue sky, cinematic anime art",
+        "negative_prompt": "photo, realistic",
+    },
+    {
+        "name": "赛博朋克动画 (Edgerunners)",
+        "prompt": "{prompt}, Studio Trigger style, vibrant neon colors, sharp outlines, dynamic composition, anime aesthetic",
+        "negative_prompt": "photo, realistic",
+    },
+    {
+        "name": "皮克斯 3D (迪士尼)",
+        "prompt": "{prompt}, Pixar style 3D render, cute features, smooth textures, ambient occlusion, cinema 4d, redshift",
+        "negative_prompt": "",
+    },
+    {
+        "name": "虚幻引擎 5 (CG写实)",
+        "prompt": "{prompt}, Unreal Engine 5 render, 8k resolution, ray tracing, digital human, octane render, 3D masterpiece",
+        "negative_prompt": "",
+    },
+    {
+        "name": "浮世绘 (日本传统)",
+        "prompt": "{prompt}, Ukiyo-e art style, woodblock print, flat colors, traditional japanese art, Hokusai style",
+        "negative_prompt": "photo, realistic",
+    },
+    {
+        "name": "素描 (铅笔)",
+        "prompt": "{prompt}, pencil sketch, graphite drawing, rough lines, shading, sketchbook style, monochrome",
+        "negative_prompt": "color, photo",
+    },
+    {
+        "name": "概念艺术 (Concept Art)",
+        "prompt": "{prompt}, digital concept art, matte painting, epic scale, highly detailed, artstation trending",
+        "negative_prompt": "",
+    },
+    {
+        "name": "波普艺术 (Warhol)",
+        "prompt": "{prompt}, Pop Art style, Andy Warhol style, bold colors, halftone dots, comic book aesthetic",
+        "negative_prompt": "photo",
+    },
+    # ========================
+    # 👗 时尚与穿搭Vibe (Fashion)
+    # ========================
+    {
+        "name": "Vogue 杂志封面",
+        "prompt": "{prompt}, Vogue editorial, high fashion, studio lighting, stylish outfit, fashion magazine cover shot",
+        "negative_prompt": "",
+    },
+    {
+        "name": "街头潮牌 (Streetwear)",
+        "prompt": "{prompt}, hypebeast style, streetwear fashion, urban background, sneakers, hoodie, candid street shot",
+        "negative_prompt": "",
+    },
+    {
+        "name": "老钱风 (Old Money)",
+        "prompt": "{prompt}, old money aesthetic, quiet luxury, ralph lauren style, country club, elegant, vintage vibe",
+        "negative_prompt": "",
+    },
+    {
+        "name": "Y2K 千禧辣妹",
+        "prompt": "{prompt}, Y2K aesthetic, 2000s fashion, glossy, pink retro vibe, butterfly clips, low rise jeans",
+        "negative_prompt": "",
+    },
+    {
+        "name": "哥特风 (Goth)",
+        "prompt": "{prompt}, gothic fashion, dark makeup, black lace, victorian goth, moody atmosphere, pale skin",
+        "negative_prompt": "",
+    },
+    {
+        "name": "机能风 (Techwear)",
+        "prompt": "{prompt}, techwear fashion, futuristic clothing, straps and buckles, urban ninja, cyberpunk city background",
+        "negative_prompt": "",
+    },
+    {
+        "name": "极简主义 (Minimalist)",
+        "prompt": "{prompt}, minimalist photography, clean background, neutral colors, simple composition, negative space",
+        "negative_prompt": "",
+    },
+    {
+        "name": "维密秀 (天使)",
+        "prompt": "{prompt}, Victoria's Secret runway style, angel wings, glamour, stage lighting, confetti, lingerie model",
+        "negative_prompt": "",
+    },
+    {
+        "name": "汉服/古风",
+        "prompt": "{prompt}, wearing traditional Chinese Hanfu, ancient chinese garden background, ethereal, wuxia style",
+        "negative_prompt": "",
+    },
+    {
+        "name": "办公室穿搭 (Office)",
+        "prompt": "{prompt}, professional office wear, blazer, modern office background, confident businesswoman look",
+        "negative_prompt": "",
+    },
+    # ========================
+    # 🎬 著名导演/电影风格 (Directors)
+    # ========================
+    {
+        "name": "韦斯·安德森 (对称/粉彩)",
+        "prompt": "{prompt}, Wes Anderson style, symmetrical composition, pastel color palette, whimsical, grand budapest hotel vibe",
+        "negative_prompt": "",
+    },
+    {
+        "name": "王家卫 (香港霓虹)",
+        "prompt": "{prompt}, Wong Kar-wai style, motion blur, neon lights, step printing, cinematic hong kong vibe, emotional",
+        "negative_prompt": "",
+    },
+    {
+        "name": "银翼杀手 2049 (橙色废土)",
+        "prompt": "{prompt}, Blade Runner 2049 style, orange hazy atmosphere, massive architecture, futuristic dystopian",
+        "negative_prompt": "",
+    },
+    {
+        "name": "黑客帝国 (绿色代码)",
+        "prompt": "{prompt}, The Matrix style, green color grading, digital rain code background, leather trench coat, sci-fi",
+        "negative_prompt": "",
+    },
+    {
+        "name": "吉卜力 (Ghibli)",
+        "prompt": "{prompt}, Studio Ghibli style, Miyazaki art, beautiful watercolor background, vibrant colors, anime food",
+        "negative_prompt": "photo, realistic",
+    },
+    {
+        "name": "沙丘 (Dune)",
+        "prompt": "{prompt}, Dune movie style, desert planet, muted beige colors, epic scale, utilitarian fashion, cinematic",
+        "negative_prompt": "",
+    },
+    {
+        "name": "美剧亢奋 (Euphoria)",
+        "prompt": "{prompt}, Euphoria TV show style, glitter makeup, purple and blue neon lighting, emotional, dreamy",
+        "negative_prompt": "",
+    },
+    {
+        "name": "权力的游戏 (中世纪)",
+        "prompt": "{prompt}, Game of Thrones style, medieval fantasy, gritty texture, castle background, fur cloak, dramatic",
+        "negative_prompt": "",
+    },
+    {
+        "name": "罪恶之城 (黑白红)",
+        "prompt": "{prompt}, Sin City style, high contrast black and white, selective color red, comic book noir",
+        "negative_prompt": "",
+    },
+    {
+        "name": "布里奇顿 (摄政风)",
+        "prompt": "{prompt}, Bridgerton style, regency era fashion, pastel garden, floral, romantic, elegant",
+        "negative_prompt": "",
+    },
+    # ========================
+    # 🌦️ 季节与天气 (Weather)
+    # ========================
+    {
+        "name": "樱花季 (春)",
+        "prompt": "{prompt}, cherry blossoms falling, spring season, pink petals, soft romantic atmosphere, park background",
+        "negative_prompt": "",
+    },
+    {
+        "name": "雨夜 (Rain)",
+        "prompt": "{prompt}, heavy rain, wet skin, reflection on ground, umbrella, moody rainy night, cinematic",
+        "negative_prompt": "",
+    },
+    {
+        "name": "暴风雪 (Winter)",
+        "prompt": "{prompt}, heavy blizzard, snow falling, winter fashion, frost on eyelashes, cold atmosphere, white background",
+        "negative_prompt": "",
+    },
+    {
+        "name": "热浪 (Summer)",
+        "prompt": "{prompt}, summer heatwave, sweating skin, bright harsh sunlight, beach background, mirage effect",
+        "negative_prompt": "",
+    },
+    {
+        "name": "秋日落叶 (Fall)",
+        "prompt": "{prompt}, autumn season, orange and red leaves, forest background, cozy sweater, warm tone",
+        "negative_prompt": "",
+    },
+    {
+        "name": "迷雾森林 (Fog)",
+        "prompt": "{prompt}, thick fog, misty forest, mysterious atmosphere, silent hill vibe, low visibility",
+        "negative_prompt": "",
+    },
+    {
+        "name": "雷暴 (Lightning)",
+        "prompt": "{prompt}, thunderstorm background, lightning bolts, dramatic sky, dark clouds, powerful atmosphere",
+        "negative_prompt": "",
+    },
+    {
+        "name": "极光 (Aurora)",
+        "prompt": "{prompt}, aurora borealis background, starry night sky, magical atmosphere, green and purple lights",
+        "negative_prompt": "",
+    },
+    {
+        "name": "彩虹 (Rainbow)",
+        "prompt": "{prompt}, double rainbow in background, after rain, bright and cheerful, vivid colors",
+        "negative_prompt": "",
+    },
+    {
+        "name": "多云阴天 (柔光)",
+        "prompt": "{prompt}, overcast sky, diffused lighting, soft shadows, moody portrait, neutral colors",
+        "negative_prompt": "",
+    },
+    # ========================
+    # 🧪 创意与特效 (Creative)
+    # ========================
+    {
+        "name": "双重曝光 (Double Exposure)",
+        "prompt": "{prompt}, double exposure art, silhouette combined with forest landscape, artistic, dreamlike",
+        "negative_prompt": "",
+    },
+    {
+        "name": "故障艺术 (Glitch)",
+        "prompt": "{prompt}, glitch art style, digital distortion, pixel sorting, chromatic aberration, cyberpunk vibe",
+        "negative_prompt": "",
+    },
+    {
+        "name": "赛博机械姬 (Cyborg)",
+        "prompt": "{prompt}, cyborg features, robotic arm, metal skin parts, glowing wires, sci-fi portrait",
+        "negative_prompt": "",
+    },
+    {
+        "name": "生物发光 (Avatar)",
+        "prompt": "{prompt}, bioluminescent skin, glowing patterns, avatar style, night forest, magical",
+        "negative_prompt": "",
+    },
+    {
+        "name": "大理石雕像",
+        "prompt": "{prompt}, marble statue style, classical sculpture, museum lighting, white stone texture",
+        "negative_prompt": "human skin, color",
+    },
+    {
+        "name": "瓷娃娃 (Porcelain)",
+        "prompt": "{prompt}, porcelain doll look, cracks on face, glossy ceramic texture, surreal, creepy cute",
+        "negative_prompt": "",
+    },
+    {
+        "name": "霓虹泼墨",
+        "prompt": "{prompt}, neon paint splatter, UV light, glowing makeup, blacklight party, artistic chaos",
+        "negative_prompt": "",
+    },
+    {
+        "name": "水中摄影",
+        "prompt": "{prompt}, underwater photography, floating hair, bubbles, light refraction, blue tones, serene",
+        "negative_prompt": "",
+    },
+    {
+        "name": "碎玻璃特效",
+        "prompt": "{prompt}, seen through broken glass, shattered mirror effect, reflection shards, dramatic",
+        "negative_prompt": "",
+    },
+    {
+        "name": "HDR 高动态范围",
+        "prompt": "{prompt}, HDR photography, high dynamic range, vivid details, hyperrealistic, clarity",
+        "negative_prompt": "",
+    },
+    # ========================
+    # 🎥 镜头视角 (Angles)
+    # ========================
+    {
+        "name": "超低角度 (英雄视角)",
+        "prompt": "{prompt}, extreme low angle shot, looking up at subject, heroic stance, epic sky background",
+        "negative_prompt": "",
+    },
+    {
+        "name": "俯视镜头 (Drone)",
+        "prompt": "{prompt}, high angle shot, drone view, looking down, birds eye view, interesting perspective",
+        "negative_prompt": "",
+    },
+    {
+        "name": "荷兰倾斜角 (动态)",
+        "prompt": "{prompt}, dutch angle shot, tilted camera, dynamic composition, uneasy atmosphere, action movie vibe",
+        "negative_prompt": "",
+    },
+    {
+        "name": "自拍视角 (Selfie)",
+        "prompt": "{prompt}, selfie angle, holding camera, looking at lens, casual vibe, phone camera quality",
+        "negative_prompt": "",
+    },
+    {
+        "name": "背影 (Mystery)",
+        "prompt": "{prompt}, view from behind, walking away, looking at horizon, mysterious, storytelling",
+        "negative_prompt": "face",
+    },
+    {
+        "name": "鱼眼镜头",
+        "prompt": "{prompt}, fisheye lens, distorted perspective, spherical effect, 90s music video style",
+        "negative_prompt": "",
+    },
+    {
+        "name": "移轴摄影 (微缩模型)",
+        "prompt": "{prompt}, tilt-shift photography, miniature effect, blurred top and bottom, toy-like city",
+        "negative_prompt": "",
+    },
+    {
+        "name": "第一人称 (FPS)",
+        "prompt": "{prompt}, POV shot, first person perspective, reaching out hand, immersive",
+        "negative_prompt": "",
+    },
+    {
+        "name": "动态模糊 (Motion)",
+        "prompt": "{prompt}, motion blur background, moving fast, rushing, dynamic speed lines",
+        "negative_prompt": "",
+    },
+    {
+        "name": "超特写 (眼部)",
+        "prompt": "{prompt}, extreme close-up on eyes, detailed iris, macro eyelashes, intense gaze",
+        "negative_prompt": "",
+    },
+    {
+        "name": "经典街拍风(纽约)",
+        "prompt": "Photorealistic, a stunningly beautiful blonde woman with blue eyes, New York City street style. She is {prompt}, walking confidently down a street in SoHo. Soft, natural afternoon light. Shot on 35mm film.",
+        "negative_prompt": "",
+    },
+    {
+        "name": "时尚大片风(纽约 Vogue)",
+        "prompt": "Fashion editorial style photo, a gorgeous supermodel with long, wavy honey-blonde hair. Posing on {prompt}. She has a cool, sophisticated expression. Wearing a stylish trench coat. Cinematic lighting, ultra detailed.",
+        "negative_prompt": "",
+    },
+    {
+        "name": "甜美邻家风(纽约)",
+        "prompt": "A beautiful young woman with bright blonde hair and a friendly smile, {prompt}. She is wearing a cute sweater and jeans. The scene is warm and inviting. Shallow depth of field, sharp focus on her face.",
+        "negative_prompt": "",
+    },
+    {
+        "name": "时尚大片风(可变服装)",
+        "prompt": "Fashion editorial style photo, a gorgeous supermodel with long, wavy honey-blonde hair. Posing on a rooftop overlooking the Manhattan skyline at sunset. She has a cool, sophisticated expression. Wearing {prompt}. Cinematic lighting, ultra detailed.",
+        "negative_prompt": "",
+    },
     {
         "name": "动画4引擎",
         "prompt": "{prompt}, depth of field, faux traditional media, painterly, impressionism, photo background",
@@ -105,7 +1079,12 @@ style_list = [
     },
     {
         "name": "菲菲时尚",
-        "prompt": "{prompt},gigantic breasts,poses,natural,High-quality photography, creative composition, fashion foresight, a strong visual style, and an aura of luxury and sophistication collectively define the distinctive aesthetic of Vogue magazine",
+        "prompt": "{prompt}, poses,natural, High-quality photography, creative composition, fashion foresight, a strong visual style, and an aura of luxury and sophistication collectively define the distinctive aesthetic of Vogue magazine",
+        "negative_prompt": "lowres,",
+    },
+    {
+        "name": "菲菲杂志",
+        "prompt": "{prompt}, poses,natural, High-quality photography, creative composition, fashion foresight, a strong visual style, and an aura of luxury and sophistication collectively define the distinctive aesthetic of fashion magazine",
         "negative_prompt": "lowres,",
     },
     {
@@ -1980,10 +2959,12 @@ style_list = [
     },
     {
         "name": "Fooocus增强",
+        "prompt": "{prompt}",
         "negative_prompt": "(worst quality, low quality, normal quality, lowres, low details, oversaturated, undersaturated, overexposed, underexposed, grayscale, bw, bad photo, bad photography, bad art:1.4), (watermark, signature, text font, username, error, logo, words, letters, digits, autograph, trademark, name:1.2), (blur, blurry, grainy), morbid, ugly, asymmetrical, mutated malformed, mutilated, poorly lit, bad shadow, draft, cropped, out of frame, cut off, censored, jpeg artifacts, out of focus, glitch, duplicate, (airbrushed, cartoon, anime, semi-realistic, cgi, render, blender, digital art, manga, amateur:1.3), (3D ,3D Game, 3D Game Scene, 3D Character:1.1), (bad hands, bad anatomy, bad body, bad face, bad teeth, bad arms, bad legs, deformities:1.3)",
     },
     {
         "name": "Fooocus半写实",
+        "prompt": "{prompt} .",
         "negative_prompt": "(worst quality, low quality, normal quality, lowres, low details, oversaturated, undersaturated, overexposed, underexposed, bad photo, bad photography, bad art:1.4), (watermark, signature, text font, username, error, logo, words, letters, digits, autograph, trademark, name:1.2), (blur, blurry, grainy), morbid, ugly, asymmetrical, mutated malformed, mutilated, poorly lit, bad shadow, draft, cropped, out of frame, cut off, censored, jpeg artifacts, out of focus, glitch, duplicate, (bad hands, bad anatomy, bad body, bad face, bad teeth, bad arms, bad legs, deformities:1.3)",
     },
     {
@@ -2003,6 +2984,7 @@ style_list = [
     },
     {
         "name": "Fooocus负片",
+        "prompt": "{prompt} .",
         "negative_prompt": "deformed, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, ugly, poorly drawn hands, missing limb, floating limbs, disconnected limbs, disconnected head, malformed hands, long neck, mutated hands and fingers, bad hands, missing fingers, cropped, worst quality, low quality, mutation, poorly drawn, huge calf, bad hands, fused hand, missing hand, disappearing arms, disappearing thigh, disappearing calf, disappearing legs, missing fingers, fused fingers, abnormal eye proportion, Abnormal hands, abnormal legs, abnormal feet, abnormal fingers, drawing, painting, crayon, sketch, graphite, impressionist, noisy, blurry, soft, deformed, ugly, anime, cartoon, graphic, text, painting, crayon, graphite, abstract, glitch",
     },
     {
@@ -2011,1060 +2993,454 @@ style_list = [
         "negative_prompt": "anime, cartoon, graphic, text, painting, crayon, graphite, abstract, glitch, deformed, mutated, ugly, disfigured",
     },
     {
-        "name": "Fooocus小马",
-        "prompt": "score_9, score_8_up, score_7_up, {prompt}",
-        "negative_prompt": "score_6, score_5, score_4",
+        "name": "Cosplay - 赛车女郎 (Race Queen)",
+        "prompt": "{prompt}, race queen costume, shiny vinyl outfit, holding a parasol, f1 circuit background, sponsors logos, high heel boots, sleek and sporty, vibrant colors, outdoor daylight, grandstand in background, professional gravure photography",
+        "negative_prompt": "dirty, rusty, dark, casual clothes, indoor",
     },
-    {"name": "WebUI (None)", "prompt": "{prompt}", "negative_prompt": ""},
     {
-        "name": "WebUI Kamph_皮肤增强 (PO)",
-        "prompt": "{prompt}, detailed skin texture, (blush:0.5), (goosebumps:0.5), subsurface scattering",
-        "negative_prompt": "",
+        "name": "Cosplay - 机械女仆 (Cyber Maid)",
+        "prompt": "{prompt}, cyberpunk maid, mechanical joints, glowing neon accents, futuristic cafe interior, metallic textures, latex dress, holographic interface, night city outside window, sci-fi aesthetic, cool color temperature",
+        "negative_prompt": "vintage, rustic, natural nature, warm lighting",
     },
     {
-        "name": "WebUI Kamph_皮肤增强 (干净)(PO)",
-        "prompt": "{prompt}, detailed skin texture, (blush:0.2), (goosebumps:0.3), subsurface scattering",
-        "negative_prompt": "",
+        "name": "Cosplay - 兔女郎 (Glossy Bunny)",
+        "prompt": "{prompt}, playboy bunny style, black glossy bodysuit, fishnet tights, bunny ears, cuffs and collar, luxury casino background, dim warm lighting, bokeh lights, classy sexy, velvet texture",
+        "negative_prompt": "cheap fabric, daylight, outdoor, messy",
     },
     {
-        "name": "WebUI Kamph_吉卜力 (PO)",
-        "prompt": "{prompt}, (Studio ghibli style, Art by Hayao Miyazaki:1.2), Anime Style, Manga Style, Hand drawn, cinematic, Sharp focus, humorous illustration, big depth of field, Masterpiece, concept art, trending on artstation, Vivid colors, Simplified style, trending on ArtStation, trending on CGSociety, Intricate, Vibrant colors, Soft Shading, Simplistic Features, Sharp Angles, Playful",
-        "negative_prompt": "",
+        "name": "Cosplay - 战斗修女 (Battle Nun)",
+        "prompt": "{prompt}, gothic battle nun, torn habit, holding a weapon (rosary or gun), ruined church background, dramatic volumetric lighting, god rays, dust particles, dark fantasy, intense expression, dynamic angle",
+        "negative_prompt": "peaceful, bright, clean, modern building",
     },
     {
-        "name": "WebUI Kamph_矢量插画 (PO)",
-        "prompt": "{prompt}, Vector art, Vivid colors, Clean lines, Sharp edges, Minimalist, Precise geometry, Simplistic, Smooth curves, Bold outlines, Crisp shapes, Flat colors, Illustration art piece, High contrast shadows, Technical illustration, Graphic design, Vector graphics, High contrast, Precision artwork, Linear compositions, Scalable artwork, Digital art",
-        "negative_prompt": "",
+        "name": "Cosplay - 巫女 (Shrine Maiden)",
+        "prompt": "{prompt}, traditional japanese miko outfit, hakama pants, white kimono top, holding a gohei, shinto shrine background, cherry blossoms falling, serene atmosphere, soft natural light, film photography style",
+        "negative_prompt": "neon, modern city, sci-fi, latex",
     },
     {
-        "name": "WebUI Kamph_数字绘画 (PO)",
-        "prompt": "{prompt}, glow effects, godrays, Hand drawn, render, 8k, octane render, cinema 4d, blender, dark, atmospheric 4k ultra detailed, cinematic, Sharp focus, big depth of field, Masterpiece, colors, 3d octane render, 4k, concept art, trending on artstation, hyperrealistic, Vivid colors, extremely detailed CG unity 8k wallpaper, trending on CGSociety, Intricate, High Detail, dramatic",
-        "negative_prompt": "",
+        "name": "Cosplay - 中华娘 (China Dress)",
+        "prompt": "{prompt}, cheongsam china dress, high slit, silk texture with embroidery, bun hairstyles (odango), chinatown neon lights background, wong kar wai style lighting, moody and atmospheric, cinematic bokeh",
+        "negative_prompt": "western architecture, plain background, flat lighting",
     },
     {
-        "name": "WebUI Kamph_独立游戏 (PO)",
-        "prompt": "{prompt}, Indie game art, Vector Art, Borderlands style, Arcane style, Cartoon style, Line art, Disctinct features, Hand drawn, Technical illustration, Graphic design, Vector graphics, High contrast, Precision artwork, Linear compositions, Scalable artwork, Digital art, cinematic sensual, Sharp focus, humorous illustration, big depth of field, Masterpiece, trending on artstation, Vivid colors, trending on ArtStation, trending on CGSociety, Intricate, Low Detail, dramatic",
-        "negative_prompt": "",
+        "name": "Cosplay - 护士 (Pink Nurse)",
+        "prompt": "{prompt}, stylized nurse outfit, pink and white theme, holding a giant syringe prop, pastel hospital studio set, cute aesthetic, soft focus, dreamlike, yami-kawaii vibe",
+        "negative_prompt": "bloody, horror, realistic hospital, gritty",
     },
     {
-        "name": "WebUI Kamph_原创照片风格 (PO)",
-        "prompt": "{prompt}, Photorealistic, Hyperrealistic, Hyperdetailed, analog style, soft lighting, subsurface scattering, realistic, heavy shadow, masterpiece, best quality, ultra realistic, 8k, golden ratio, Intricate, High Detail, film photography, soft focus",
-        "negative_prompt": "",
+        "name": "Cosplay - 魅魔 (Succubus)",
+        "prompt": "{prompt}, succubus cosplay, small bat wings, heart shaped tail, gothic lolita influence, dark studio background with purple rim light, mysterious mist, seductive gaze, vampire aesthetic",
+        "negative_prompt": "daylight, sun, holy, angel",
     },
     {
-        "name": "WebUI Kamph_黑白胶片 Noir (PO)",
-        "prompt": "{prompt}, (b&w, Monochromatic, Film Photography:1.3),  Photorealistic, Hyperrealistic, Hyperdetailed, film noir, analog style, soft lighting, subsurface scattering, realistic, heavy shadow, masterpiece, best quality, ultra realistic, 8k, golden ratio, Intricate, High Detail, film photography, soft focus",
-        "negative_prompt": "",
+        "name": "Cosplay - 忍者 (Kunoichi)",
+        "prompt": "{prompt}, kunoichi ninja costume, fishnet mesh, face mask pulled down, bamboo forest at night, moonlight, dynamic pose, katana on back, japanese historical fantasy",
+        "negative_prompt": "modern city, guns, western clothing",
     },
     {
-        "name": "WebUI Kamph_等距房间 (PO)",
-        "prompt": "{prompt}, Tiny cute isometric in a cutaway box, soft smooth lighting, soft colors, 100mm lens, 3d blender render",
-        "negative_prompt": "",
+        "name": "Cosplay - 魔法少女 (Magical Girl)",
+        "prompt": "{prompt}, magical girl transformation sequence, floating ribbons, glowing staff, sparkles and glitter effects, starry sky background, anime vivid colors, dynamic composition, low angle shot",
+        "negative_prompt": "realistic, dull colors, static",
     },
     {
-        "name": "WebUI Kamph_太空全息图 (PO)",
-        "prompt": "{prompt}, hologram floating in space, a vibrant digital illustration, dribbble, quantum wavetracing, black background, behance hd",
-        "negative_prompt": "",
+        "name": "Cosplay - 蒸汽朋克 (Steampunk)",
+        "prompt": "{prompt}, steampunk aviator, brass goggles, corset, leather gears, airship deck background, sepia tone, clouds and blue sky, adventure vibe, detailed mechanical accessories",
+        "negative_prompt": "cyberpunk, neon, modern technology",
     },
     {
-        "name": "WebUI Kamph_可爱生物 (PO)",
-        "prompt": "{prompt}, 3d fluffy, closeup cute and adorable, cute big circular reflective eyes, long fuzzy fur, Pixar render, unreal engine cinematic smooth, intricate detail, cinematic",
-        "negative_prompt": "",
+        "name": "Cosplay - 异世界精灵 (Elf Archer)",
+        "prompt": "{prompt}, fantasy elf, pointed ears, green and brown leather armor, ancient forest background, magical fireflies, ethereal lighting, nature fantasy, detailed vegetation",
+        "negative_prompt": "urban, concrete, sci-fi, indoors",
     },
     {
-        "name": "WebUI Kamph_写实肖像照片 (PO)",
-        "prompt": "{prompt}, RAW candid cinema, 16mm, color graded portra 400 film, remarkable color, ultra realistic, textured skin, remarkable detailed pupils, realistic dull skin noise, visible skin detail, skin fuzz, dry skin, shot with cinematic camera",
-        "negative_prompt": "",
+        "name": "Cosplay - 绝地求生 (Tactical Gear)",
+        "prompt": "{prompt}, tactical military gear, bulletproof vest, cropped top, cargo pants, abandoned warehouse, cinematic action lighting, dust in air, tough but cute, survival game aesthetic",
+        "negative_prompt": "clean studio, fantasy, dress, heels",
     },
     {
-        "name": "WebUI Kamph_专业风景照片 (PO)",
-        "prompt": "long shot scenic professional photograph of {prompt}, perfect viewpoint, highly detailed, wide-angle lens, hyper realistic, with dramatic sky, polarizing filter, natural lighting, vivid colors, everything in sharp focus, HDR, UHD, 64K",
-        "negative_prompt": "",
+        "name": "Cosplay - 体育服 (Bloomers)",
+        "prompt": "{prompt}, retro japanese gym uniform, bloomers, white t-shirt, school gymnasium background, wooden floor, volleyball net, sweaty skin texture, afternoon sunlight, youth vibe",
+        "negative_prompt": "dark, night, outdoor, fancy dress",
     },
     {
-        "name": "WebUI 电影剧照",
-        "prompt": "cinematic still {prompt} . emotional, harmonious, vignette, highly detailed, high budget, bokeh, cinemascope, moody, epic, gorgeous, film grain, grainy",
-        "negative_prompt": "anime, cartoon, graphic, text, painting, crayon, graphite, abstract, glitch, deformed, mutated, ugly, disfigured",
+        "name": "Cosplay - 僵尸新娘 (Ghost Bride)",
+        "prompt": "{prompt}, tattered wedding dress, pale skin, blue roses, spooky graveyard background, fog, moonlight, tim burton aesthetic, gothic romance, melancholy expression",
+        "negative_prompt": "sunny, happy, colorful, modern",
     },
     {
-        "name": "WebUI sai-3d模型",
-        "prompt": "professional 3d model {prompt} . octane render, highly detailed, volumetric, dramatic lighting",
-        "negative_prompt": "ugly, deformed, noisy, low poly, blurry, painting",
+        "name": "Cosplay - 圣诞装 (Santa Girl)",
+        "prompt": "{prompt}, santa claus bikini dress, white fur trim, holding a gift box, christmas tree background with bokeh lights, festive atmosphere, winter night, warm cozy lighting",
+        "negative_prompt": "summer, beach, tropical, green grass",
     },
     {
-        "name": "WebUI sai-模拟胶片",
-        "prompt": "analog film photo {prompt} . faded film, desaturated, 35mm photo, grainy, vignette, vintage, Kodachrome, Lomography, stained, highly detailed, found footage",
-        "negative_prompt": "painting, drawing, illustration, glitch, deformed, mutated, cross-eyed, ugly, disfigured",
+        "name": "Cosplay - 万圣节魔女 (Halloween Witch)",
+        "prompt": "{prompt}, cute witch costume, large pointed hat, holding a pumpkin lantern, orange and purple lights, halloween decorations, playful expression, fantasy night",
+        "negative_prompt": "scary, horror, gore, realistic",
     },
     {
-        "name": "WebUI sai-动漫",
-        "prompt": "anime artwork {prompt} . anime style, key visual, vibrant, studio anime,  highly detailed",
-        "negative_prompt": "photo, deformed, black and white, realism, disfigured, low contrast",
+        "name": "Cosplay - 办公室OL (Office Lady)",
+        "prompt": "{prompt}, tight pencil skirt, white blouse, glasses, office background with city view, holding documents, professional look, soft office lighting, confident pose",
+        "negative_prompt": "fantasy, armor, swimsuit, messy",
     },
     {
-        "name": "WebUI sai-电影",
-        "prompt": "cinematic film still {prompt} . shallow depth of field, vignette, highly detailed, high budget, bokeh, cinemascope, moody, epic, gorgeous, film grain, grainy",
-        "negative_prompt": "anime, cartoon, graphic, text, painting, crayon, graphite, abstract, glitch, deformed, mutated, ugly, disfigured",
+        "name": "Cosplay - 兽耳娘 (Catgirl)",
+        "prompt": "{prompt}, nekomimi catgirl, fluffy cat ears, paw gloves, oversized bell collar, cozy room background, playful pose, whiskers makeup, kawaii animal theme",
+        "negative_prompt": "serious, human ears only, realistic animal",
     },
     {
-        "name": "WebUI sai-漫画书",
-        "prompt": "comic {prompt} . graphic illustration, comic art, graphic novel art, vibrant, highly detailed",
-        "negative_prompt": "photograph, deformed, glitch, noisy, realistic, stock photo",
+        "name": "Cosplay - 摄影会现场 (Studio Session)",
+        "prompt": "{prompt}, sitting on a white cube, professional photo studio, softboxes and umbrellas visible in background, plain white cyclorama, fashion model pose, clean lighting, behind the scenes vibe",
+        "negative_prompt": "outdoor, complex background, dark",
     },
     {
-        "name": "WebUI sai-粘土工艺",
-        "prompt": "play-doh style {prompt} . sculpture, clay art, centered composition, Claymation",
-        "negative_prompt": "sloppy, messy, grainy, highly detailed, ultra textured, photo",
+        "name": "Cosplay - 圣骑士 (Paladin)",
+        "prompt": "{prompt}, silver plate armor with gold trim, white cape, holding a sword, fantasy castle courtyard background, lens flare, holy atmosphere, majestic pose, metallic texture, knight commander",
+        "negative_prompt": "rust, dirty, dark, casual clothes",
     },
     {
-        "name": "WebUI sai-数字艺术",
-        "prompt": "concept art {prompt} . digital artwork, illustrative, painterly, matte painting, highly detailed",
-        "negative_prompt": "photo, photorealistic, realism, ugly",
+        "name": "Cosplay - 暗夜精灵 (Dark Elf)",
+        "prompt": "{prompt}, dark elf skin tone option, silver long hair, purple leather armor, glowing magical runes, underground cavern background with bioluminescent plants, mysterious, mystical atmosphere",
+        "negative_prompt": "sunlight, human ears, bright day",
     },
     {
-        "name": "WebUI sai-增强",
-        "prompt": "breathtaking {prompt} . award-winning, professional, highly detailed",
-        "negative_prompt": "ugly, deformed, noisy, blurry, distorted, grainy",
+        "name": "Cosplay - 龙娘 (Dragon Girl)",
+        "prompt": "{prompt}, dragon horns, scales on skin patches, chinese style dress with slits, mountain peak background, clouds swirling, fantasy martial arts pose, mythical aura, sharp eyes",
+        "negative_prompt": "western armor, modern city, wings obstructing face",
     },
     {
-        "name": "WebUI sai-奇幻艺术",
-        "prompt": "ethereal fantasy concept art of  {prompt} . magnificent, celestial, ethereal, painterly, epic, majestic, magical, fantasy art, cover art, dreamy",
-        "negative_prompt": "photographic, realistic, realism, 35mm film, dslr, cropped, frame, text, deformed, glitch, noise, noisy, off-center, deformed, cross-eyed, closed eyes, bad anatomy, ugly, disfigured, sloppy, duplicate, mutated, black and white",
+        "name": "Cosplay - 炼金术士 (Alchemist)",
+        "prompt": "{prompt}, steampunk fantasy robe, holding bubbling potion flask, library filled with scrolls background, magical smoke, messy desk, curious expression, detailed glass texture",
+        "negative_prompt": "empty room, sci-fi, digital",
     },
     {
-        "name": "WebUI sai-等距",
-        "prompt": "isometric style {prompt} . vibrant, beautiful, crisp, detailed, ultra detailed, intricate",
-        "negative_prompt": "deformed, mutated, ugly, disfigured, blur, blurry, noise, noisy, realistic, photographic",
+        "name": "Cosplay - 森林射手 (Archer)",
+        "prompt": "{prompt}, green hooded cloak, leather corset, holding a longbow, dense forest background, sunbeams through leaves (tyndall effect), focused gaze, nature particles",
+        "negative_prompt": "gun, urban, indoor, neon",
     },
     {
-        "name": "WebUI sai-线条艺术",
-        "prompt": "line art drawing {prompt} . professional, sleek, modern, minimalist, graphic, line art, vector graphics",
-        "negative_prompt": "anime, photorealistic, 35mm film, deformed, glitch, blurry, noisy, off-center, deformed, cross-eyed, closed eyes, bad anatomy, ugly, disfigured, mutated, realism, realistic, impressionism, expressionism, oil, acrylic",
+        "name": "Cosplay - 堕天使 (Fallen Angel)",
+        "prompt": "{prompt}, black feathered wings, tattered black dress, chains, gothic cathedral ruins background, dark stormy sky, melancholic expression, dramatic lighting, feathers falling",
+        "negative_prompt": "white wings, happy, sunny, clean",
     },
     {
-        "name": "WebUI sai-低多边形",
-        "prompt": "low-poly style {prompt} . low-poly game art, polygon mesh, jagged, blocky, wireframe edges, centered composition",
-        "negative_prompt": "noisy, sloppy, messy, grainy, highly detailed, ultra textured, photo",
+        "name": "Cosplay - 维京女战士 (Viking)",
+        "prompt": "{prompt}, fur-lined leather armor, war paint on face, snowy fjord background, holding a round shield, cold breath vapor, fierce but beautiful, nordic aesthetic",
+        "negative_prompt": "tropical, delicate, silk, modern",
     },
     {
-        "name": "WebUI sai-霓虹朋克",
-        "prompt": "neonpunk style {prompt} . cyberpunk, vaporwave, neon, vibes, vibrant, stunningly beautiful, crisp, detailed, sleek, ultramodern, magenta highlights, dark purple shadows, high contrast, cinematic, ultra detailed, intricate, professional",
-        "negative_prompt": "painting, drawing, illustration, glitch, deformed, mutated, cross-eyed, ugly, disfigured",
+        "name": "Cosplay - 阿拉伯舞娘 (Dancer)",
+        "prompt": "{prompt}, belly dancer outfit, sheer veils, gold jewelry, desert oasis background at sunset, warm golden lighting, intricate henna tattoos, exotic atmosphere",
+        "negative_prompt": "cold, snow, heavy armor, office",
     },
     {
-        "name": "WebUI sai-折纸",
-        "prompt": "origami style {prompt} . paper art, pleated paper, folded, origami art, pleats, cut and fold, centered composition",
-        "negative_prompt": "noisy, sloppy, messy, grainy, highly detailed, ultra textured, photo",
+        "name": "Cosplay - 海盗船长 (Pirate)",
+        "prompt": "{prompt}, tricorn hat, pirate captain coat, holding a flintlock pistol, ship deck background, ocean horizon, adventure vibe, wind blowing coat, cinematic",
+        "negative_prompt": "modern ship, navy uniform, clean studio",
     },
     {
-        "name": "WebUI sai-摄影",
-        "prompt": "cinematic photo {prompt} . 35mm photograph, film, bokeh, professional, 4k, highly detailed",
-        "negative_prompt": "drawing, painting, crayon, sketch, graphite, impressionist, noisy, blurry, soft, deformed, ugly",
+        "name": "Cosplay - 阴阳师 (Onmyoji)",
+        "prompt": "{prompt}, traditional heian period clothing, tall hat, holding paper talismans (ofuda), mystical japanese temple background, blue spiritual fire, supernatural atmosphere",
+        "negative_prompt": "western magic, wand, medieval europe",
     },
     {
-        "name": "WebUI sai-像素艺术",
-        "prompt": "pixel-art {prompt} . low-res, blocky, pixel art style, 8-bit graphics",
-        "negative_prompt": "sloppy, messy, blurry, noisy, highly detailed, ultra textured, photo, realistic",
+        "name": "Cosplay - 太空驾驶员 (Plugsuit)",
+        "prompt": "{prompt}, tight latex sci-fi plugsuit, glossy texture, interface headset, inside mech cockpit, holographic displays, neon rim lights, evangelion style aesthetic, futuristic",
+        "negative_prompt": "fabric, loose clothes, fantasy, nature",
     },
     {
-        "name": "WebUI sai-纹理",
-        "prompt": "texture {prompt} top down close-up",
-        "negative_prompt": "ugly, deformed, noisy, blurry",
+        "name": "Cosplay - 仿生人 (Android)",
+        "prompt": "{prompt}, android with visible ball joints, porcelain skin texture, data cables background, server room, cold blue lighting, emotionless expression, sci-fi doll",
+        "negative_prompt": "human skin texture, messy, warm lights",
     },
     {
-        "name": "WebUI 广告-广告",
-        "prompt": "Advertising poster style {prompt} . Professional, modern, product-focused, commercial, eye-catching, highly detailed",
-        "negative_prompt": "noisy, blurry, amateurish, sloppy, unattractive",
+        "name": "Cosplay - 赛博忍者 (Cyber Ninja)",
+        "prompt": "{prompt}, high-tech ninja suit, carbon fiber texture, glowing katana, neo-tokyo rooftop background, rain, cyberpunk city lights, dynamic crouching pose",
+        "negative_prompt": "historical, traditional, daylight",
     },
     {
-        "name": "WebUI 广告-汽车",
-        "prompt": "Automotive advertisement style {prompt} . Sleek, dynamic, professional, commercial, vehicle-focused, high-resolution, highly detailed",
-        "negative_prompt": "noisy, blurry, unattractive, sloppy, unprofessional",
+        "name": "Cosplay - 废土生存 (Wasteland)",
+        "prompt": "{prompt}, mad max style gear, goggles, dust mask hanging on neck, desert ruins background, rusty metal, gritty texture, sunset backlight, tough survivalist",
+        "negative_prompt": "clean, shiny, luxury, indoor",
     },
     {
-        "name": "WebUI 广告-企业",
-        "prompt": "Corporate branding style {prompt} . Professional, clean, modern, sleek, minimalist, business-oriented, highly detailed",
-        "negative_prompt": "noisy, blurry, grungy, sloppy, cluttered, disorganized",
+        "name": "Cosplay - 银河歌姬 (Space Idol)",
+        "prompt": "{prompt}, holographic dress, floating crystals, space stage background with stars and planets, singing into sci-fi mic, vibrant nebula colors, macross style",
+        "negative_prompt": "earth, street, plain background",
     },
     {
-        "name": "WebUI 广告-时尚编辑",
-        "prompt": "Fashion editorial style {prompt} . High fashion, trendy, stylish, editorial, magazine style, professional, highly detailed",
-        "negative_prompt": "outdated, blurry, noisy, unattractive, sloppy",
+        "name": "Cosplay - 特工 (Secret Agent)",
+        "prompt": "{prompt}, black tactical catsuit, harness, night cityscape background, holding a silenced pistol, cool attitude, action movie poster style, sleek hair",
+        "negative_prompt": "colorful, cute, frilly, daylight",
     },
     {
-        "name": "WebUI 广告-美食摄影",
-        "prompt": "Food photography style {prompt} . Appetizing, professional, culinary, high-resolution, commercial, highly detailed",
-        "negative_prompt": "unappetizing, sloppy, unprofessional, noisy, blurry",
+        "name": "Cosplay - 实验室少女 (Subject Zero)",
+        "prompt": "{prompt}, wearing white hospital gown or bandages, cables attached to body, sterile white laboratory background, floating in water tank style, ethereal, mysterious sci-fi",
+        "negative_prompt": "dirty, dark, warm, bedroom",
     },
     {
-        "name": "WebUI 广告-奢侈品",
-        "prompt": "Luxury product style {prompt} . Elegant, sophisticated, high-end, luxurious, professional, highly detailed",
-        "negative_prompt": "cheap, noisy, blurry, unattractive, amateurish",
+        "name": "Cosplay - 宇航员便服 (Space Casual)",
+        "prompt": "{prompt}, futuristic casual wear, transparent plastic jacket, spaceship corridor background, zero gravity hair effect, floating objects, clean sci-fi aesthetic",
+        "negative_prompt": "dirty, retro, earth gravity",
     },
     {
-        "name": "WebUI 广告-房地产",
-        "prompt": "Real estate photography style {prompt} . Professional, inviting, well-lit, high-resolution, property-focused, commercial, highly detailed",
-        "negative_prompt": "dark, blurry, unappealing, noisy, unprofessional",
+        "name": "Cosplay - 虚拟玩家 (VR Gamer)",
+        "prompt": "{prompt}, wearing futuristic VR headset (visor up), glowing headphones, gaming room background with RGB lights, cyber fashion, digital glitch effects, gamer girl vibe",
+        "negative_prompt": "traditional, nature, rustic",
     },
     {
-        "name": "WebUI 广告-零售",
-        "prompt": "Retail packaging style {prompt} . Vibrant, enticing, commercial, product-focused, eye-catching, professional, highly detailed",
-        "negative_prompt": "noisy, blurry, amateurish, sloppy, unattractive",
+        "name": "Cosplay - 激光女警 (Future Police)",
+        "prompt": "{prompt}, futuristic police uniform, armored vest, visor, flying patrol car background, blue and red sirens light, cyberpunk law enforcement, authoritarian but cute",
+        "negative_prompt": "retro police, current day, regular car",
     },
     {
-        "name": "WebUI 艺术风格-抽象",
-        "prompt": "abstract style {prompt} . non-representational, colors and shapes, expression of feelings, imaginative, highly detailed",
-        "negative_prompt": "realistic, photographic, figurative, concrete",
+        "name": "Cosplay - 空姐 (Stewardess)",
+        "prompt": "{prompt}, retro pan-am style flight attendant uniform, pillbox hat, airport runway background, pulling a suitcase, wind blowing scarf, elegant travel vibe, professional smile",
+        "negative_prompt": "messy, inside plane, casual",
     },
     {
-        "name": "WebUI 艺术风格-抽象表现主义",
-        "prompt": "abstract expressionist painting {prompt} . energetic brushwork, bold colors, abstract forms, expressive, emotional",
-        "negative_prompt": "realistic, photorealistic, low contrast, plain, simple, monochrome",
+        "name": "Cosplay - 女仆 (Classic Maid)",
+        "prompt": "{prompt}, victorian maid outfit, long skirt, white apron, holding a silver tray with tea set, european mansion interior, elegant posture, afternoon tea time",
+        "negative_prompt": "short skirt, latex, neon, cafe",
     },
     {
-        "name": "WebUI 艺术风格-装饰艺术",
-        "prompt": "Art Deco style {prompt} . geometric shapes, bold colors, luxurious, elegant, decorative, symmetrical, ornate, detailed",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic, modernist, minimalist",
+        "name": "Cosplay - 啦啦队 (Cheerleader)",
+        "prompt": "{prompt}, american style cheerleader uniform, crop top, pleated skirt, holding pompoms, stadium background with bright lights, energetic jump or pose, youthful vibe",
+        "negative_prompt": "dark, serious, indoor, formal",
     },
     {
-        "name": "WebUI 艺术风格-新艺术运动",
-        "prompt": "Art Nouveau style {prompt} . elegant, decorative, curvilinear forms, nature-inspired, ornate, detailed",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic, modernist, minimalist",
+        "name": "Cosplay - 女警官 (Police)",
+        "prompt": "{prompt}, stylized police uniform, miniskirt, handcuffs on belt, leaning on a police car, city street background, sunglasses, authoritative stance, cool beauty",
+        "negative_prompt": "bloody, horror, fantasy, swim",
     },
     {
-        "name": "WebUI 艺术风格-构成主义",
-        "prompt": "constructivist style {prompt} . geometric shapes, bold colors, dynamic composition, propaganda art style",
-        "negative_prompt": "realistic, photorealistic, low contrast, plain, simple, abstract expressionism",
+        "name": "Cosplay - 教师 (Teacher)",
+        "prompt": "{prompt}, tight pencil skirt, white shirt, glasses, holding a pointer, classroom blackboard background with chalk writing, serious but sexy expression, office lady vibe",
+        "negative_prompt": "outdoor, fantasy, child, student",
     },
     {
-        "name": "WebUI 艺术风格-立体主义",
-        "prompt": "cubist artwork {prompt} . geometric shapes, abstract, innovative, revolutionary",
-        "negative_prompt": "anime, photorealistic, 35mm film, deformed, glitch, low contrast, noisy",
+        "name": "Cosplay - 网球手 (Tennis)",
+        "prompt": "{prompt}, white tennis dress, visor, holding tennis racket, sunny tennis court background, sweat on skin, dynamic sports photography, healthy sexy",
+        "negative_prompt": "night, indoor, rain, dress shoes",
     },
     {
-        "name": "WebUI 艺术风格-表现主义",
-        "prompt": "expressionist {prompt} . raw, emotional, dynamic, distortion for emotional effect, vibrant, use of unusual colors, detailed",
-        "negative_prompt": "realism, symmetry, quiet, calm, photo",
+        "name": "Cosplay - 餐厅服务员 (American Diner)",
+        "prompt": "{prompt}, retro 50s diner waitress, striped dress, apron, holding a milkshake, roller skates (optional), neon diner sign background, colorful pop aesthetic",
+        "negative_prompt": "dark, modern, gothic, japanese",
     },
     {
-        "name": "WebUI 艺术风格-涂鸦",
-        "prompt": "graffiti style {prompt} . street art, vibrant, urban, detailed, tag, mural",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic",
+        "name": "Cosplay - 修女 (Nun)",
+        "prompt": "{prompt}, traditional nun habit, rosary beads, stained glass window background, sun rays, praying pose, serene and holy atmosphere, forbidden beauty",
+        "negative_prompt": "battle, weapon, torn clothes, dark",
     },
     {
-        "name": "WebUI 艺术风格-超现实主义",
-        "prompt": "hyperrealistic art {prompt} . extremely high-resolution details, photographic, realism pushed to extreme, fine texture, incredibly lifelike",
-        "negative_prompt": "simplified, abstract, unrealistic, impressionistic, low resolution",
+        "name": "Cosplay - 军装指挥官 (Military)",
+        "prompt": "{prompt}, military dress uniform, peaked cap, cape over shoulders, medals, war room map background, stern expression, anime military aesthetic",
+        "negative_prompt": "camouflage, dirty, field battle, casual",
     },
     {
-        "name": "WebUI 艺术风格-印象派",
-        "prompt": "impressionist painting {prompt} . loose brushwork, vibrant color, light and shadow play, captures feeling over form",
-        "negative_prompt": "anime, photorealistic, 35mm film, deformed, glitch, low contrast, noisy",
+        "name": "Cosplay - 芭蕾舞者 (Ballerina)",
+        "prompt": "{prompt}, white ballet tutu, satin pointe shoes, theater stage with spotlight, graceful pose, elegant atmosphere, swan lake vibe, artistic photography",
+        "negative_prompt": "street, sporty, rough, dark",
     },
     {
-        "name": "WebUI 艺术风格-点彩派",
-        "prompt": "pointillism style {prompt} . composed entirely of small, distinct dots of color, vibrant, highly detailed",
-        "negative_prompt": "line drawing, smooth shading, large color fields, simplistic",
+        "name": "Cosplay - 花魁 (Oiran)",
+        "prompt": "{prompt}, elaborate oiran kimono, many hairpins, holding a long pipe (kiseru), red tatami room background, gold leaf screen, luxurious and seductive, vibrant red and gold colors",
+        "negative_prompt": "simple kimono, outdoor, daylight, modern",
     },
     {
-        "name": "WebUI 艺术风格-波普艺术",
-        "prompt": "Pop Art style {prompt} . bright colors, bold outlines, popular culture themes, ironic or kitsch",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic, minimalist",
+        "name": "Cosplay - 哥特萝莉 (Gothic Lolita)",
+        "prompt": "{prompt}, black frilly lolita dress, lace parasol, bonnet, rose garden background, cloudy sky, doll-like makeup, elegant gothic aesthetic",
+        "negative_prompt": "sweet colors, sunny, casual, sporty",
     },
     {
-        "name": "WebUI 艺术风格-迷幻",
-        "prompt": "psychedelic style {prompt} . vibrant colors, swirling patterns, abstract forms, surreal, trippy",
-        "negative_prompt": "monochrome, black and white, low contrast, realistic, photorealistic, plain, simple",
+        "name": "Cosplay - 不良少女 (Sukeban)",
+        "prompt": "{prompt}, long skirt school uniform, sailor collar, holding a wooden sword or bat, graffiti wall background, defiant expression, retro 80s delinquent vibe",
+        "negative_prompt": "short skirt, cute, happy, clean",
     },
     {
-        "name": "WebUI 艺术风格-文艺复兴",
-        "prompt": "Renaissance style {prompt} . realistic, perspective, light and shadow, religious or mythological themes, highly detailed",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, modernist, minimalist, abstract",
+        "name": "Cosplay - 昭和偶像 (Retro Idol)",
+        "prompt": "{prompt}, 80s hairstyle, puffy sleeve dress, holding a retro microphone, vintage stage background, soft hazy filter, city pop album cover style, nostalgic",
+        "negative_prompt": "modern, hd, sharp, neon",
     },
     {
-        "name": "WebUI 艺术风格-蒸汽朋克",
-        "prompt": "steampunk style {prompt} . antique, mechanical, brass and copper tones, gears, intricate, detailed",
-        "negative_prompt": "deformed, glitch, noisy, low contrast, anime, photorealistic",
+        "name": "Cosplay - 浴衣约会 (Yukata Date)",
+        "prompt": "{prompt}, wearing colorful yukata, holding a fan and festival pouch, summer festival background with lanterns, fireworks in sky, looking back, romantic night",
+        "negative_prompt": "winter, cold, swimsuit, indoor",
     },
     {
-        "name": "WebUI 艺术风格-超现实主义",
-        "prompt": "surrealist art {prompt} . dreamlike, mysterious, provocative, symbolic, intricate, detailed",
-        "negative_prompt": "anime, photorealistic, realistic, deformed, glitch, noisy, low contrast",
+        "name": "Cosplay - 剑道少女 (Kendo)",
+        "prompt": "{prompt}, wearing hakama and bogu (chest armor), holding bamboo sword (shinai), traditional dojo background, sunlight dust motes, sweat, focused martial arts vibe",
+        "negative_prompt": "fantasy sword, outdoor, western armor",
     },
     {
-        "name": "WebUI 艺术风格-排版",
-        "prompt": "typographic art {prompt} . stylized, intricate, detailed, artistic, text-based",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic",
+        "name": "Cosplay - 视觉系 (Visual Kei)",
+        "prompt": "{prompt}, elaborate rock costume, leather and lace, heavy makeup, chains, concert backstage background, edgy and cool, j-rock aesthetic",
+        "negative_prompt": "natural, sweet, pastel, plain",
     },
     {
-        "name": "WebUI 艺术风格-水彩",
-        "prompt": "watercolor painting {prompt} . vibrant, beautiful, painterly, detailed, textural, artistic",
-        "negative_prompt": "anime, photorealistic, 35mm film, deformed, glitch, low contrast, noisy",
+        "name": "Cosplay - 幽灵少女 (Yurei)",
+        "prompt": "{prompt}, white burial kimono, long black hair covering part of face, old japanese house background, blue spirit orbs, eerie but beautiful, horror romance",
+        "negative_prompt": "zombie, blood, gore, western ghost",
     },
     {
-        "name": "WebUI 未来主义-生物机械",
-        "prompt": "biomechanical style {prompt} . blend of organic and mechanical elements, futuristic, cybernetic, detailed, intricate",
-        "negative_prompt": "natural, rustic, primitive, organic, simplistic",
+        "name": "Cosplay - 狐妖 (Kitsune)",
+        "prompt": "{prompt}, fox ears and nine tails, shrine maiden outfit modified, torii gate pathway background, mystical fog, mask on side of head, supernatural beauty",
+        "negative_prompt": "western fox, furry, realistic animal",
     },
     {
-        "name": "WebUI 未来主义-生物机械赛博朋克",
-        "prompt": "biomechanical cyberpunk {prompt} . cybernetics, human-machine fusion, dystopian, organic meets artificial, dark, intricate, highly detailed",
-        "negative_prompt": "natural, colorful, deformed, sketch, low contrast, watercolor",
+        "name": "Cosplay - 女文豪 (Taisho Romance)",
+        "prompt": "{prompt}, taisho era hakama outfit, boots, big ribbon in hair, old coffee shop background, reading a book, retro japanese aesthetic, intellectual vibe",
+        "negative_prompt": "modern, sci-fi, swimsuit, armor",
     },
     {
-        "name": "WebUI 未来主义-控制论",
-        "prompt": "cybernetic style {prompt} . futuristic, technological, cybernetic enhancements, robotics, artificial intelligence themes",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic, historical, medieval",
+        "name": "Cosplay - 史莱姆娘 (Slime Girl)",
+        "prompt": "{prompt}, translucent blue skin parts, liquid texture clothes, dungeon background, glowing from within, fantasy monster girl, gooey aesthetic, magical",
+        "negative_prompt": "solid, opaque, human skin only, dry",
     },
     {
-        "name": "WebUI 未来主义-控制论机器人",
-        "prompt": "cybernetic robot {prompt} . android, AI, machine, metal, wires, tech, futuristic, highly detailed",
-        "negative_prompt": "organic, natural, human, sketch, watercolor, low contrast",
+        "name": "Cosplay - 绷带装 (Bandage)",
+        "prompt": "{prompt}, body wrapped in white bandages, torn fabrics, abandoned hospital background, dramatic shadows, fragile beauty, edgy fashion",
+        "negative_prompt": "mummy, horror, gore, clean",
     },
     {
-        "name": "WebUI 未来主义-赛博朋克城市景观",
-        "prompt": "cyberpunk cityscape {prompt} . neon lights, dark alleys, skyscrapers, futuristic, vibrant colors, high contrast, highly detailed",
-        "negative_prompt": "natural, rural, deformed, low contrast, black and white, sketch, watercolor",
+        "name": "Cosplay - 湿身衬衫 (Wet Shirt)",
+        "prompt": "{prompt}, wearing oversized white shirt, wet and translucent sticking to skin, rain or pool background, hair wet, cinematic lighting, vulnerable vibe",
+        "negative_prompt": "dry, thick fabric, nudity, cartoon",
     },
     {
-        "name": "WebUI 未来主义-未来主义",
-        "prompt": "futuristic style {prompt} . sleek, modern, ultramodern, high tech, detailed",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic, vintage, antique",
+        "name": "Cosplay - 礼品丝带 (Ribbon Wrapped)",
+        "prompt": "{prompt}, body wrapped in red satin ribbons, large bow, white studio background, high key lighting, gift concept, playful and cute, fashion editorial style",
+        "negative_prompt": "bondage, dark, scary, messy",
     },
     {
-        "name": "WebUI 未来主义-复古赛博朋克",
-        "prompt": "retro cyberpunk {prompt} . 80's inspired, synthwave, neon, vibrant, detailed, retro futurism",
-        "negative_prompt": "modern, desaturated, black and white, realism, low contrast",
+        "name": "Cosplay - 水晶裙 (Crystal)",
+        "prompt": "{prompt}, dress made of crystals and glass, refraction effects, prism rainbow lights, abstract background, ethereal fantasy, high fashion, shiny",
+        "negative_prompt": "cloth, cotton, dull, matte",
     },
     {
-        "name": "WebUI 未来主义-复古未来主义",
-        "prompt": "retro-futuristic {prompt} . vintage sci-fi, 50s and 60s style, atomic age, vibrant, highly detailed",
-        "negative_prompt": "contemporary, realistic, rustic, primitive",
+        "name": "Cosplay - 胶衣猫女 (Latex Cat)",
+        "prompt": "{prompt}, full body black latex suit, cat mask, whip, rooftop night background, moon, shiny texture highlights, seductive thief",
+        "negative_prompt": "fabric, matte, day, cute",
     },
     {
-        "name": "WebUI 未来主义-科幻",
-        "prompt": "sci-fi style {prompt} . futuristic, technological, alien worlds, space themes, advanced civilizations",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic, historical, medieval",
+        "name": "Cosplay - 鲜花裙 (Flower Fairy)",
+        "prompt": "{prompt}, dress made of real petals and flowers, macro photography perspective (small size), garden background blurred, morning dew, fantasy fairy aesthetic",
+        "negative_prompt": "artificial flowers, plastic, urban",
     },
     {
-        "name": "WebUI 未来主义-蒸汽波",
-        "prompt": "vaporwave style {prompt} . retro aesthetic, cyberpunk, vibrant, neon colors, vintage 80s and 90s style, highly detailed",
-        "negative_prompt": "monochrome, muted colors, realism, rustic, minimalist, dark",
+        "name": "Cosplay - 扑克女王 (Queen of Hearts)",
+        "prompt": "{prompt}, red and black heart theme dress, holding playing cards, wonderland background, surreal perspective, royal attitude, fantasy costume",
+        "negative_prompt": "casino, realistic, modern",
     },
     {
-        "name": "WebUI 游戏-泡泡龙",
-        "prompt": "Bubble Bobble style {prompt} . 8-bit, cute, pixelated, fantasy, vibrant, reminiscent of Bubble Bobble game",
-        "negative_prompt": "realistic, modern, photorealistic, violent, horror",
+        "name": "Cosplay - 婚纱战损 (Ruined Bride)",
+        "prompt": "{prompt}, elaborate white wedding dress, torn and dirty at hem, holding a weapon, battlefield ruins background, sunset smoke, tragic beauty, cinematic contrast",
+        "negative_prompt": "clean wedding, church, happy, party",
     },
     {
-        "name": "WebUI 游戏-赛博朋克游戏",
-        "prompt": "cyberpunk game style {prompt} . neon, dystopian, futuristic, digital, vibrant, detailed, high contrast, reminiscent of cyberpunk genre video games",
-        "negative_prompt": "historical, natural, rustic, low detailed",
+        "name": "Cosplay - 赛博格半身 (Cyborg)",
+        "prompt": "{prompt}, half human half machine, metallic skin parts, glowing lines, futuristic city background, sorrowful expression, ghost in the shell vibe",
+        "negative_prompt": "full robot, full human, messy",
     },
     {
-        "name": "WebUI 游戏-格斗游戏",
-        "prompt": "fighting game style {prompt} . dynamic, vibrant, action-packed, detailed character design, reminiscent of fighting video games",
-        "negative_prompt": "peaceful, calm, minimalist, photorealistic",
+        "name": "网红 - 对镜自拍 (Mirror Selfie)",
+        "prompt": "{prompt}, mirror selfie shot, holding smartphone, bedroom background, messy bed, casual loungewear, flash photography reflection, authentic influencer vibe, slightly tilted angle, cute phone case",
+        "negative_prompt": "professional camera, studio lighting, third person view, tripod",
     },
     {
-        "name": "WebUI 游戏-侠盗猎车手",
-        "prompt": "GTA-style artwork {prompt} . satirical, exaggerated, pop art style, vibrant colors, iconic characters, action-packed",
-        "negative_prompt": "realistic, black and white, low contrast, impressionist, cubist, noisy, blurry, deformed",
+        "name": "网红 - 咖啡探店 (Cafe Date)",
+        "prompt": "{prompt}, sitting at a cafe table, holding a latte art coffee, window seat with city street view, natural daylight, date pov, trendy fashion, relaxed atmosphere, candid shot",
+        "negative_prompt": "dark, night, studio, looking at camera",
     },
     {
-        "name": "WebUI 游戏-马里奥",
-        "prompt": "Super Mario style {prompt} . vibrant, cute, cartoony, fantasy, playful, reminiscent of Super Mario series",
-        "negative_prompt": "realistic, modern, horror, dystopian, violent",
+        "name": "网红 - 温泉旅行 (Onsen Trip)",
+        "prompt": "{prompt}, wearing a yukata, japanese ryokan interior, tatami mats, onsen town street at night, holding a wooden bucket, steam, warm orange lighting, traditional vibe, blushing cheeks",
+        "negative_prompt": "modern hotel, western clothes, swimsuit, cold colors",
     },
     {
-        "name": "WebUI 游戏-我的世界",
-        "prompt": "Minecraft style {prompt} . blocky, pixelated, vibrant colors, recognizable characters and objects, game assets",
-        "negative_prompt": "smooth, realistic, detailed, photorealistic, noise, blurry, deformed",
+        "name": "网红 - 迪士尼乐园 (Theme Park)",
+        "prompt": "{prompt}, wearing mickey mouse ear headband, holding a churro, theme park castle background, crowded but blurred, sunset golden hour, colorful balloons, happy smile, tourist photo",
+        "negative_prompt": "empty, dark, horror, serious face",
     },
     {
-        "name": "WebUI 游戏-宝可梦",
-        "prompt": "Pokémon style {prompt} . vibrant, cute, anime, fantasy, reminiscent of Pokémon series",
-        "negative_prompt": "realistic, modern, horror, dystopian, violent",
+        "name": "网红 - 晨间苏醒 (Morning Bedhead)",
+        "prompt": "{prompt}, lying in bed, white sheets, messy hair, oversized white t-shirt, morning sunlight streaming through curtains, POV shot, intimate atmosphere, sleepy eyes, no makeup look",
+        "negative_prompt": "heavy makeup, night, party, outdoor",
     },
     {
-        "name": "WebUI 游戏-复古街机",
-        "prompt": "retro arcade style {prompt} . 8-bit, pixelated, vibrant, classic video game, old school gaming, reminiscent of 80s and 90s arcade games",
-        "negative_prompt": "modern, ultra-high resolution, photorealistic, 3D",
+        "name": "网红 - 夜跑/健身 (Night Gym)",
+        "prompt": "{prompt}, wearing yoga pants and sports bra, gym mirror background or night running track, sweat on skin, ponytail, holding water bottle, fitness influencer, energetic, neon city lights in distance",
+        "negative_prompt": "lazy, dress, high heels, eating",
     },
     {
-        "name": "WebUI 游戏-复古游戏",
-        "prompt": "retro game art {prompt} . 16-bit, vibrant colors, pixelated, nostalgic, charming, fun",
-        "negative_prompt": "realistic, photorealistic, 35mm film, deformed, glitch, low contrast, noisy",
+        "name": "网红 - 豪车副驾 (Car Passenger)",
+        "prompt": "{prompt}, sitting in passenger seat of luxury car, wearing seatbelt, sunlight coming through windshield, dashboard visible, travel vibe, sunglasses on head, leather seats texture",
+        "negative_prompt": "driving, bus, train, outside car",
     },
     {
-        "name": "WebUI 游戏-角色扮演奇幻游戏",
-        "prompt": "role-playing game (RPG) style fantasy {prompt} . detailed, vibrant, immersive, reminiscent of high fantasy RPG games",
-        "negative_prompt": "sci-fi, modern, urban, futuristic, low detailed",
+        "name": "网红 - 街头抓拍 (Harajuku Street)",
+        "prompt": "{prompt}, walking on harajuku street, fashionable streetwear, looking back at camera, crowded japanese street background, colorful signs, motion blur on background people, paparazzi style snapshot",
+        "negative_prompt": "studio, posed, static, empty street",
     },
     {
-        "name": "WebUI 游戏-策略游戏",
-        "prompt": "strategy game style {prompt} . overhead view, detailed map, units, reminiscent of real-time strategy video games",
-        "negative_prompt": "first-person view, modern, photorealistic",
+        "name": "网红 - 海边夕阳 (Beach Sunset)",
+        "prompt": "{prompt}, walking on the beach, summer sundress (not bikini), wind blowing hair, golden sunset horizon, lens flare, romantic atmosphere, silhouette effect, warm colors",
+        "negative_prompt": "midday, harsh shadows, snow, studio",
     },
     {
-        "name": "WebUI 游戏-街头霸王",
-        "prompt": "Street Fighter style {prompt} . vibrant, dynamic, arcade, 2D fighting game, highly detailed, reminiscent of Street Fighter series",
-        "negative_prompt": "3D, realistic, modern, photorealistic, turn-based strategy",
+        "name": "网红 - 便利店深夜 (Konbini Night)",
+        "prompt": "{prompt}, standing in front of japanese convenience store shelves, holding snacks and drink, fluorescent lighting, late night vibe, casual hoodie, glass reflection, candid everyday moment",
+        "negative_prompt": "luxury, daylight, nature, historical",
     },
     {
-        "name": "WebUI 游戏-塞尔达",
-        "prompt": "Legend of Zelda style {prompt} . vibrant, fantasy, detailed, epic, heroic, reminiscent of The Legend of Zelda series",
-        "negative_prompt": "sci-fi, modern, realistic, horror",
+        "name": "网红 - 补妆特写 (Makeup Touch-up)",
+        "prompt": "{prompt}, extreme close-up of face, applying lipstick or mascara, holding a compact mirror, ring light reflection in eyes, flawless skin texture, beauty influencer style, macro photography",
+        "negative_prompt": "full body, wide shot, blurry, low res",
     },
     {
-        "name": "WebUI 杂项-建筑",
-        "prompt": "architectural style {prompt} . clean lines, geometric shapes, minimalist, modern, architectural drawing, highly detailed",
-        "negative_prompt": "curved lines, ornate, baroque, abstract, grunge",
+        "name": "网红 - 公园野餐 (Park Picnic)",
+        "prompt": "{prompt}, lying on picnic mat, green grass, picnic basket and fruits, top-down view or low angle, spring cherry blossoms, dappled sunlight, pastel colors, soft dreamy vibe",
+        "negative_prompt": "winter, rain, concrete, dark",
     },
     {
-        "name": "WebUI 杂项-迪斯科",
-        "prompt": "disco-themed {prompt} . vibrant, groovy, retro 70s style, shiny disco balls, neon lights, dance floor, highly detailed",
-        "negative_prompt": "minimalist, rustic, monochrome, contemporary, simplistic",
+        "name": "网红 - 图书馆学习 (Study Vibes)",
+        "prompt": "{prompt}, wearing round glasses, library background with bookshelves, holding a pen and notebook, whisper quiet atmosphere, academia aesthetic, soft indoor lighting, focused expression",
+        "negative_prompt": "loud, party, sport, outdoor",
     },
     {
-        "name": "WebUI 杂项-梦境",
-        "prompt": "dreamscape {prompt} . surreal, ethereal, dreamy, mysterious, fantasy, highly detailed",
-        "negative_prompt": "realistic, concrete, ordinary, mundane",
+        "name": "网红 - 电车通勤 (Train Commute)",
+        "prompt": "{prompt}, standing in japanese train, holding hand strap, window reflection, blurred scenery moving outside, rush hour but focused on subject, melancholic urban vibe, cinematic color grading",
+        "negative_prompt": "empty train, fantasy, medieval, studio",
     },
     {
-        "name": "WebUI 杂项-反乌托邦",
-        "prompt": "dystopian style {prompt} . bleak, post-apocalyptic, somber, dramatic, highly detailed",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, cheerful, optimistic, vibrant, colorful",
+        "name": "网红 - 居酒屋 (Izakaya Night)",
+        "prompt": "{prompt}, holding a glass of beer or highball, izakaya background with red lanterns, wooden interior, lively atmosphere, blurred customers, tipsy blush, warm yellow lighting",
+        "negative_prompt": "fancy restaurant, western food, morning, sterile",
     },
     {
-        "name": "WebUI 杂项-童话",
-        "prompt": "fairy tale {prompt} . magical, fantastical, enchanting, storybook style, highly detailed",
-        "negative_prompt": "realistic, modern, ordinary, mundane",
+        "name": "网红 - 机场出发 (Airport Travel)",
+        "prompt": "{prompt}, sitting on suitcase, airport terminal background, holding passport and ticket, departure board, travel fashion, wide angle, excitement for trip, clean modern architecture",
+        "negative_prompt": "home, messy, dirty, old",
     },
     {
-        "name": "WebUI 杂项-哥特",
-        "prompt": "gothic style {prompt} . dark, mysterious, haunting, dramatic, ornate, detailed",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic, cheerful, optimistic",
+        "name": "网红 - 楼顶天台 (Rooftop View)",
+        "prompt": "{prompt}, standing on building rooftop, leaning on railing, city skyline in background, blue hour (twilight), wind in hair, urban melancholy, cinematic wide shot",
+        "negative_prompt": "ground level, indoor, forest, claustrophobic",
     },
     {
-        "name": "WebUI 杂项-垃圾",
-        "prompt": "grunge style {prompt} . textured, distressed, vintage, edgy, punk rock vibe, dirty, noisy",
-        "negative_prompt": "smooth, clean, minimalist, sleek, modern, photorealistic",
+        "name": "网红 - 雨天撑伞 (Rainy Day)",
+        "prompt": "{prompt}, holding a clear plastic umbrella, rain falling, wet asphalt street reflecting neon lights, transparent raincoat, moody atmosphere, blade runner vibe but casual",
+        "negative_prompt": "sunny, dry, desert, happy bright",
     },
     {
-        "name": "WebUI 杂项-恐怖",
-        "prompt": "horror-themed {prompt} . eerie, unsettling, dark, spooky, suspenseful, grim, highly detailed",
-        "negative_prompt": "cheerful, bright, vibrant, light-hearted, cute",
+        "name": "网红 - 被窝私房 (Cozy Bedroom)",
+        "prompt": "{prompt}, wrapped in fluffy blanket, only face and shoulders visible, cozy bedroom at night, fairy lights in background, warm color palette, intimate girlfriend POV, soft focus",
+        "negative_prompt": "cold, outdoor, public place, sharp",
     },
     {
-        "name": "WebUI 杂项-可爱",
-        "prompt": "kawaii style {prompt} . cute, adorable, brightly colored, cheerful, anime influence, highly detailed",
-        "negative_prompt": "dark, scary, realistic, monochrome, abstract",
-    },
-    {
-        "name": "WebUI 杂项-洛夫克拉夫特式",
-        "prompt": "lovecraftian horror {prompt} . eldritch, cosmic horror, unknown, mysterious, surreal, highly detailed",
-        "negative_prompt": "light-hearted, mundane, familiar, simplistic, realistic",
-    },
-    {
-        "name": "WebUI 杂项-病态",
-        "prompt": "macabre style {prompt} . dark, gothic, grim, haunting, highly detailed",
-        "negative_prompt": "bright, cheerful, light-hearted, cartoonish, cute",
-    },
-    {
-        "name": "WebUI 杂项-漫画",
-        "prompt": "manga style {prompt} . vibrant, high-energy, detailed, iconic, Japanese comic style",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic, Western comic style",
-    },
-    {
-        "name": "WebUI 杂项-大都市",
-        "prompt": "metropolis-themed {prompt} . urban, cityscape, skyscrapers, modern, futuristic, highly detailed",
-        "negative_prompt": "rural, natural, rustic, historical, simple",
-    },
-    {
-        "name": "WebUI 杂项-极简主义",
-        "prompt": "minimalist style {prompt} . simple, clean, uncluttered, modern, elegant",
-        "negative_prompt": "ornate, complicated, highly detailed, cluttered, disordered, messy, noisy",
-    },
-    {
-        "name": "WebUI 杂项-单色",
-        "prompt": "monochrome {prompt} . black and white, contrast, tone, texture, detailed",
-        "negative_prompt": "colorful, vibrant, noisy, blurry, deformed",
-    },
-    {
-        "name": "WebUI 杂项-航海",
-        "prompt": "nautical-themed {prompt} . sea, ocean, ships, maritime, beach, marine life, highly detailed",
-        "negative_prompt": "landlocked, desert, mountains, urban, rustic",
-    },
-    {
-        "name": "WebUI 杂项-太空",
-        "prompt": "space-themed {prompt} . cosmic, celestial, stars, galaxies, nebulas, planets, science fiction, highly detailed",
-        "negative_prompt": "earthly, mundane, ground-based, realism",
-    },
-    {
-        "name": "WebUI 杂项-彩色玻璃",
-        "prompt": "stained glass style {prompt} . vibrant, beautiful, translucent, intricate, detailed",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic",
-    },
-    {
-        "name": "WebUI 杂项-机能时尚",
-        "prompt": "techwear fashion {prompt} . futuristic, cyberpunk, urban, tactical, sleek, dark, highly detailed",
-        "negative_prompt": "vintage, rural, colorful, low contrast, realism, sketch, watercolor",
-    },
-    {
-        "name": "WebUI 杂项-部落",
-        "prompt": "tribal style {prompt} . indigenous, ethnic, traditional patterns, bold, natural colors, highly detailed",
-        "negative_prompt": "modern, futuristic, minimalist, pastel",
-    },
-    {
-        "name": "WebUI 杂项-禅绕画",
-        "prompt": "zentangle {prompt} . intricate, abstract, monochrome, patterns, meditative, highly detailed",
-        "negative_prompt": "colorful, representative, simplistic, large fields of color",
-    },
-    {
-        "name": "WebUI 纸艺-拼贴",
-        "prompt": "collage style {prompt} . mixed media, layered, textural, detailed, artistic",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic",
-    },
-    {
-        "name": "WebUI 纸艺-平面剪纸",
-        "prompt": "flat papercut style {prompt} . silhouette, clean cuts, paper, sharp edges, minimalist, color block",
-        "negative_prompt": "3D, high detail, noise, grainy, blurry, painting, drawing, photo, disfigured",
-    },
-    {
-        "name": "WebUI 纸艺-剪纸",
-        "prompt": "kirigami representation of {prompt} . 3D, paper folding, paper cutting, Japanese, intricate, symmetrical, precision, clean lines",
-        "negative_prompt": "painting, drawing, 2D, noisy, blurry, deformed",
-    },
-    {
-        "name": "WebUI 纸艺-纸浆",
-        "prompt": "paper mache representation of {prompt} . 3D, sculptural, textured, handmade, vibrant, fun",
-        "negative_prompt": "2D, flat, photo, sketch, digital art, deformed, noisy, blurry",
-    },
-    {
-        "name": "WebUI 纸艺-纸艺缠绕",
-        "prompt": "paper quilling art of {prompt} . intricate, delicate, curling, rolling, shaping, coiling, loops, 3D, dimensional, ornamental",
-        "negative_prompt": "photo, painting, drawing, 2D, flat, deformed, noisy, blurry",
-    },
-    {
-        "name": "WebUI 纸艺-剪纸拼贴",
-        "prompt": "papercut collage of {prompt} . mixed media, textured paper, overlapping, asymmetrical, abstract, vibrant",
-        "negative_prompt": "photo, 3D, realistic, drawing, painting, high detail, disfigured",
-    },
-    {
-        "name": "WebUI 纸艺-剪纸影盒",
-        "prompt": "3D papercut shadow box of {prompt} . layered, dimensional, depth, silhouette, shadow, papercut, handmade, high contrast",
-        "negative_prompt": "painting, drawing, photo, 2D, flat, high detail, blurry, noisy, disfigured",
-    },
-    {
-        "name": "WebUI 纸艺-叠层剪纸",
-        "prompt": "stacked papercut art of {prompt} . 3D, layered, dimensional, depth, precision cut, stacked layers, papercut, high contrast",
-        "negative_prompt": "2D, flat, noisy, blurry, painting, drawing, photo, deformed",
-    },
-    {
-        "name": "WebUI 纸艺-厚层剪纸",
-        "prompt": "thick layered papercut art of {prompt} . deep 3D, volumetric, dimensional, depth, thick paper, high stack, heavy texture, tangible layers",
-        "negative_prompt": "2D, flat, thin paper, low stack, smooth texture, painting, drawing, photo, deformed",
-    },
-    {
-        "name": "WebUI 照片-外星人",
-        "prompt": "alien-themed {prompt} . extraterrestrial, cosmic, otherworldly, mysterious, sci-fi, highly detailed",
-        "negative_prompt": "earthly, mundane, common, realistic, simple",
-    },
-    {
-        "name": "WebUI 照片-黑色电影",
-        "prompt": "film noir style {prompt} . monochrome, high contrast, dramatic shadows, 1940s style, mysterious, cinematic",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic, vibrant, colorful",
-    },
-    {
-        "name": "WebUI 照片-hdr",
-        "prompt": "HDR photo of {prompt} . High dynamic range, vivid, rich details, clear shadows and highlights, realistic, intense, enhanced contrast, highly detailed",
-        "negative_prompt": "flat, low contrast, oversaturated, underexposed, overexposed, blurred, noisy",
-    },
-    {
-        "name": "WebUI 照片-长时间曝光",
-        "prompt": "long exposure photo of {prompt} . Blurred motion, streaks of light, surreal, dreamy, ghosting effect, highly detailed",
-        "negative_prompt": "static, noisy, deformed, shaky, abrupt, flat, low contrast",
-    },
-    {
-        "name": "WebUI 照片-霓虹朋克",
-        "prompt": "neon noir {prompt} . cyberpunk, dark, rainy streets, neon signs, high contrast, low light, vibrant, highly detailed",
-        "negative_prompt": "bright, sunny, daytime, low contrast, black and white, sketch, watercolor",
-    },
-    {
-        "name": "WebUI 照片-剪影",
-        "prompt": "silhouette style {prompt} . high contrast, minimalistic, black and white, stark, dramatic",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, color, realism, photorealistic",
-    },
-    {
-        "name": "WebUI 照片-移轴",
-        "prompt": "tilt-shift photo of {prompt} . Selective focus, miniature effect, blurred background, highly detailed, vibrant, perspective control",
-        "negative_prompt": "blurry, noisy, deformed, flat, low contrast, unrealistic, oversaturated, underexposed",
-    },
-    {
-        "name": "WebUI 电影-歌女",
-        "prompt": "UHD, 8K, ultra detailed, a cinematic photograph of {prompt}, beautiful lighting, great composition",
-        "negative_prompt": "ugly, deformed, noisy, blurry, NSFW",
-    },
-    {
-        "name": "WebUI 抽象表现主义",
-        "prompt": "Abstract Expressionism Art, {prompt}, High contrast, minimalistic, colorful, stark, dramatic, expressionism",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, realism, photorealistic",
-    },
-    {
-        "name": "WebUI 学院派",
-        "prompt": "Academia, {prompt}, preppy Ivy League style, stark, dramatic, chic boarding school, academia",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, grunge, sloppy, unkempt",
-    },
-    {
-        "name": "WebUI 动作人偶",
-        "prompt": "Action Figure, {prompt}, plastic collectable action figure, collectable toy action figure",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 可爱3D角色",
-        "prompt": "Adorable 3D Character, {prompt}, 3D render, adorable character, 3D art",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, grunge, sloppy, unkempt, photograph, photo, realistic",
-    },
-    {
-        "name": "WebUI 可爱卡哇伊",
-        "prompt": "Adorable Kawaii, {prompt}, pretty, cute, adorable, kawaii",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, gothic, dark, moody, monochromatic",
-    },
-    {
-        "name": "WebUI 装饰艺术",
-        "prompt": "Art Deco, {prompt}, sleek, geometric forms, art deco style",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 新艺术运动",
-        "prompt": "Art Nouveau, beautiful art, {prompt}, sleek, organic forms, long, sinuous, art nouveau style",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, industrial, mechanical",
-    },
-    {
-        "name": "WebUI 星体光环",
-        "prompt": "Astral Aura, {prompt}, astral, colorful aura, vibrant energy",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 前卫",
-        "prompt": "Avant-garde, {prompt}, unusual, experimental, avant-garde art",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 巴洛克",
-        "prompt": "Baroque, {prompt}, dramatic, exuberant, grandeur, baroque art",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 包豪斯风格海报",
-        "prompt": "Bauhaus-Style Poster, {prompt}, simple geometric shapes, clean lines, primary colors, Bauhaus-Style Poster",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 蓝图示意图",
-        "prompt": "Blueprint Schematic Drawing, {prompt}, technical drawing, blueprint, schematic",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 漫画",
-        "prompt": "Caricature, {prompt}, exaggerated, comical, caricature",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, realistic",
-    },
-    {
-        "name": "WebUI 赛璐珞渲染艺术",
-        "prompt": "Cel Shaded Art, {prompt}, 2D, flat color, toon shading, cel shaded style",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 角色设计图",
-        "prompt": "Character Design Sheet, {prompt}, character reference sheet, character turn around",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 古典主义艺术",
-        "prompt": "Classicism Art, {prompt}, inspired by Roman and Greek culture, clarity, harmonious, classicism art",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 色域绘画",
-        "prompt": "Color Field Painting, {prompt}, abstract, simple, geometic, color field painting style",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 彩色铅笔艺术",
-        "prompt": "Colored Pencil Art, {prompt}, colored pencil strokes, light color, visible paper texture, colored pencil art",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 概念艺术",
-        "prompt": "Conceptual Art, {prompt}, concept art",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 构成主义",
-        "prompt": "Constructivism Art, {prompt}, minimalistic, geometric forms, constructivism art",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 立体主义",
-        "prompt": "Cubism Art, {prompt}, flat geometric forms, cubism art",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 达达主义",
-        "prompt": "Dadaism Art, {prompt}, satirical, nonsensical, dadaism art",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 黑暗幻想",
-        "prompt": "Dark Fantasy Art, {prompt}, dark, moody, dark fantasy style",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, bright, sunny",
-    },
-    {
-        "name": "WebUI 黑暗阴郁氛围",
-        "prompt": "Dark Moody Atmosphere, {prompt}, dramatic, mysterious, dark moody atmosphere",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, vibrant, colorful, bright",
-    },
-    {
-        "name": "WebUI DMT艺术风格",
-        "prompt": "DMT Art Style, {prompt}, bright colors, surreal visuals, swirling patterns, DMT art style",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 涂鸦艺术",
-        "prompt": "Doodle Art Style, {prompt}, drawing, freeform, swirling patterns, doodle art style",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 双重曝光",
-        "prompt": "Double Exposure Style, {prompt}, double image ghost effect, image combination, double exposure style",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 滴落颜料飞溅艺术",
-        "prompt": "Dripping Paint Splatter Art, {prompt}, dramatic, paint drips, splatters, dripping paint",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 表现主义",
-        "prompt": "Expressionism Art Style, {prompt}, movement, contrast, emotional, exaggerated forms, expressionism art style",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 褪色宝丽来照片",
-        "prompt": "Faded Polaroid Photo, {prompt}, analog, old faded photo, old polaroid",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, vibrant, colorful",
-    },
-    {
-        "name": "WebUI 野兽派",
-        "prompt": "Fauvism Art, {prompt}, painterly, bold colors, textured brushwork, fauvism art",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 平面2D艺术",
-        "prompt": "Flat 2D Art, {prompt}, simple flat color, 2-dimensional, Flat 2D Art Style",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, 3D, photo, realistic",
-    },
-    {
-        "name": "WebUI 堡垒之夜艺术风格",
-        "prompt": "Fortnite Art Style, {prompt}, 3D cartoon, colorful, Fortnite Art Style",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, photo, realistic",
-    },
-    {
-        "name": "WebUI 未来主义",
-        "prompt": "Futurism Art Style, {prompt}, dynamic, dramatic, Futurism Art Style",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 故障艺术",
-        "prompt": "Glitchcore Art Style, {prompt}, dynamic, dramatic, distorted, vibrant colors, glitchcore art style",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI Glo-fi",
-        "prompt": "Glo-fi Art Style, {prompt}, dynamic, dramatic, vibrant colors, glo-fi art style",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI Googie艺术风格",
-        "prompt": "Googie Art Style, {prompt}, dynamic, dramatic, 1950's futurism, bold boomerang angles, Googie art style",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 涂鸦艺术",
-        "prompt": "Graffiti Art Style, {prompt}, dynamic, dramatic, vibrant colors, graffiti art style",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 哈莱姆文艺复兴艺术",
-        "prompt": "Harlem Renaissance Art Style, {prompt}, dynamic, dramatic, 1920s African American culture, Harlem Renaissance art style",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 高级时装",
-        "prompt": "High Fashion, {prompt}, dynamic, dramatic, haute couture, elegant, ornate clothing, High Fashion",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 田园",
-        "prompt": "Idyllic, {prompt}, peaceful, happy, pleasant, happy, harmonious, picturesque, charming",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 印象派",
-        "prompt": "Impressionism, {prompt}, painterly, small brushstrokes, visible brushstrokes, impressionistic style",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 信息图绘制",
-        "prompt": "Infographic Drawing, {prompt}, diagram, infographic",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 墨滴绘制",
-        "prompt": "Ink Dripping Drawing, {prompt}, ink drawing, dripping ink",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, colorful, vibrant",
-    },
-    {
-        "name": "WebUI 日本水墨画",
-        "prompt": "Japanese Ink Drawing, {prompt}, ink drawing, inkwash, Japanese Ink Drawing",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, colorful, vibrant",
-    },
-    {
-        "name": "WebUI 整理摄影",
-        "prompt": "Knolling Photography, {prompt}, flat lay photography, object arrangment, knolling photography",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 轻松愉快的氛围",
-        "prompt": "Light Cheery Atmosphere, {prompt}, happy, joyful, cheerful, carefree, gleeful, lighthearted, pleasant atmosphere",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, monochromatic, dark, moody",
-    },
-    {
-        "name": "WebUI 标志设计",
-        "prompt": "Logo Design, {prompt}, dynamic graphic art, vector art, minimalist, professional logo design",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 奢华优雅",
-        "prompt": "Luxurious Elegance, {prompt}, extravagant, ornate, designer, opulent, picturesque, lavish",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 微距摄影",
-        "prompt": "Macro Photography, {prompt}, close-up, macro 100mm, macro photography",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 曼陀罗艺术",
-        "prompt": "Mandola art style, {prompt}, complex, circular design, mandola",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 马克笔画",
-        "prompt": "Marker Drawing, {prompt}, bold marker lines, visibile paper texture, marker drawing",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, photograph, realistic",
-    },
-    {
-        "name": "WebUI 中世纪",
-        "prompt": "Medievalism, {prompt}, inspired by The Middle Ages, medieval art, elaborate patterns and decoration, Medievalism",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 极简主义",
-        "prompt": "Minimalism, {prompt}, abstract, simple geometic shapes, hard edges, sleek contours, Minimalism",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 新巴洛克",
-        "prompt": "Neo-Baroque, {prompt}, ornate and elaborate, dynaimc, Neo-Baroque",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 新拜占庭",
-        "prompt": "Neo-Byzantine, {prompt}, grand decorative religious style, Orthodox Christian inspired, Neo-Byzantine",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 新未来主义",
-        "prompt": "Neo-Futurism, {prompt}, high-tech, curves, spirals, flowing lines, idealistic future, Neo-Futurism",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 新印象派",
-        "prompt": "Neo-Impressionism, {prompt}, tiny dabs of color, Pointillism, painterly, Neo-Impressionism",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, photograph, realistic",
-    },
-    {
-        "name": "WebUI 新洛可可",
-        "prompt": "Neo-Rococo, {prompt}, curved forms, naturalistic ornamentation, elaborate, decorative, gaudy, Neo-Rococo",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 新古典主义",
-        "prompt": "Neoclassicism, {prompt}, ancient Rome and Greece inspired, idealic, sober colors, Neoclassicism",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 欧普艺术",
-        "prompt": "Op Art, {prompt}, optical illusion, abstract, geometric pattern, impression of movement, Op Art",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 华丽而精致",
-        "prompt": "Ornate and Intricate, {prompt}, decorative, highly detailed, elaborate, ornate, intricate",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 铅笔素描",
-        "prompt": "Pencil Sketch Drawing, {prompt}, black and white drawing, graphite drawing",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 波普艺术2",
-        "prompt": "Pop Art, {prompt}, vivid colors, flat color, 2D, strong lines, Pop Art",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, photo, realistic",
-    },
-    {
-        "name": "WebUI 洛可可",
-        "prompt": "Rococo, {prompt}, flamboyant, pastel colors, curved lines, elaborate detail, Rococo",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 剪影艺术",
-        "prompt": "Silhouette Art, {prompt}, high contrast, well defined, Silhouette Art",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 简单矢量艺术",
-        "prompt": "Simple Vector Art, {prompt}, 2D flat, simple shapes, minimalistic, professional graphic, flat color, high contrast, Simple Vector Art",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, 3D, photo, realistic",
-    },
-    {
-        "name": "WebUI 草图大师",
-        "prompt": "Sketchup, {prompt}, CAD, professional design, Sketchup",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, photo, photograph",
-    },
-    {
-        "name": "WebUI 蒸汽朋克2",
-        "prompt": "Steampunk, {prompt}, retrofuturistic science fantasy, steam-powered tech, vintage industry, gears, neo-victorian, steampunk",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 超现实主义",
-        "prompt": "Surrealism, {prompt}, expressive, dramatic, organic lines and forms, dreamlike and mysterious, Surrealism",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, realistic",
-    },
-    {
-        "name": "WebUI 至上主义",
-        "prompt": "Suprematism, {prompt}, abstract, limited color palette, geometric forms, Suprematism",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, realistic",
-    },
-    {
-        "name": "WebUI Terragen",
-        "prompt": "Terragen, {prompt}, beautiful massive landscape, epic scenery, Terragen",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 宁静放松的氛围",
-        "prompt": "Tranquil Relaxing Atmosphere, {prompt}, calming style, soothing colors, peaceful, idealic, Tranquil Relaxing Atmosphere",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, oversaturated",
-    },
-    {
-        "name": "WebUI 贴纸设计",
-        "prompt": "Vector Art Stickers, {prompt}, professional vector design, sticker designs, Sticker Sheet",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 醒目光轮",
-        "prompt": "Vibrant Rim Light, {prompt}, bright rim light, high contrast, bold edge light",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 体积光",
-        "prompt": "Volumetric Lighting, {prompt}, light depth, dramatic atmospheric lighting, Volumetric Lighting",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast",
-    },
-    {
-        "name": "WebUI 水彩2",
-        "prompt": "Watercolor style painting, {prompt}, visible paper texture, colorwash, watercolor",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, photo, realistic",
-    },
-    {
-        "name": "WebUI 异想天开和俏皮",
-        "prompt": "Whimsical and Playful, {prompt}, imaginative, fantastical, bight colors, stylized, happy, Whimsical and Playful",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast, drab, boring, moody",
-    },
-    {
-        "name": "WebUI Kamph_3D模型",
-        "prompt": "professional 3d model {prompt}, octane render, highly detailed, volumetric, dramatic lighting",
-        "negative_prompt": "ugly, deformed, noisy, low poly, blurry, painting",
-    },
-    {
-        "name": "WebUI Kamph_模拟胶片",
-        "prompt": "analog film photo {prompt}, faded film, desaturated, 35mm photo, grainy, vignette, vintage, Kodachrome, Lomography, stained, highly detailed, found footage",
-        "negative_prompt": "painting, drawing, illustration, glitch, deformed, mutated, cross-eyed, ugly, disfigured",
-    },
-    {
-        "name": "WebUI Kamph_动漫",
-        "prompt": "anime artwork {prompt}, anime style, key visual, vibrant, studio anime,  highly detailed",
-        "negative_prompt": "photo, deformed, black and white, realism, disfigured, low contrast",
-    },
-    {
-        "name": "WebUI Kamph_电影",
-        "prompt": "cinematic film still {prompt}, shallow depth of field, vignette, highly detailed, high budget Hollywood film, bokeh, cinemascope, moody, epic, gorgeous, film grain",
-        "negative_prompt": "anime, cartoon, graphic, text, painting, crayon, graphite, abstract, glitch",
-    },
-    {
-        "name": "WebUI Kamph_漫画书",
-        "prompt": "comic {prompt}, graphic illustration, comic art, graphic novel art, vibrant, highly detailed",
-        "negative_prompt": "photograph, deformed, glitch, noisy, realistic, stock photo",
-    },
-    {
-        "name": "WebUI Kamph_数字艺术",
-        "prompt": "concept art {prompt}, digital artwork, illustrative, painterly, matte painting, highly detailed",
-        "negative_prompt": "photo, photorealistic, realism, ugly",
-    },
-    {
-        "name": "WebUI Kamph_奇幻艺术",
-        "prompt": "ethereal fantasy concept art of  {prompt}, magnificent, celestial, ethereal, painterly, epic, majestic, magical, fantasy art, cover art, dreamy",
-        "negative_prompt": "photographic, realistic, realism, 35mm film, dslr, cropped, frame, text, deformed, glitch, noise, noisy, off-center, deformed, cross-eyed, closed eyes, bad anatomy, ugly, disfigured, sloppy, duplicate, mutated, black and white",
-    },
-    {
-        "name": "WebUI Kamph_赛博朋克",
-        "prompt": "neonpunk style {prompt}, cyberpunk, vaporwave, neon, vibes, vibrant, stunningly beautiful, crisp, detailed, sleek, ultramodern, magenta highlights, dark purple shadows, high contrast, cinematic, ultra detailed, intricate, professional",
-        "negative_prompt": "painting, drawing, illustration, glitch, deformed, mutated, cross-eyed, ugly, disfigured",
-    },
-    {
-        "name": "WebUI Kamph_带散景的照片",
-        "prompt": "cinematic photo {prompt}, 35mm photograph, film, bokeh, professional, 4k, highly detailed",
-        "negative_prompt": "drawing, painting, crayon, sketch, graphite, impressionist, noisy, blurry, soft, deformed, ugly",
-    },
-    {
-        "name": "WebUI Kamph_无散景的照片",
-        "prompt": "cinematic photo {prompt}, 35mm photograph, film, professional, 4k, highly detailed",
-        "negative_prompt": "bokeh, drawing, painting, crayon, sketch, graphite, impressionist, noisy, blurry, soft, deformed, ugly",
-    },
-    {
-        "name": "WebUI Kamph_增强器",
-        "prompt": "breathtaking {prompt}, masterpiece, award-winning, professional, highly detailed",
-        "negative_prompt": "ugly, deformed, noisy, blurry, distorted, grainy",
-    },
-    {
-        "name": "WebUI Bens_红裙 (教程提示)",
-        "prompt": "a fashion shoot of a european woman with blonde hair in a maxi silk red dress with slit at front of dress from thigh to floor, (legs exposed:1.8), Red Patent Pointed Stiletto Heel Court Shoes, plain background, RAW candid cinema, 35mm, color graded portra 400 film, remarkable color, ultra realistic, textured skin, remarkable detailed pupils, realistic dull skin noise, visible skin detail, skin fuzz, dry skin, shot with cinematic camera",
-        "negative_prompt": "",
-    },
-    {
-        "name": "WebUI Bens_银版照片 1920",
-        "prompt": "daguerreotype photo, {prompt},  1920s photography, historical photo, aged photo, black & white photography, damaged photo",
-        "negative_prompt": "cartoon, illustration, painting, frame",
-    },
-    {
-        "name": "WebUI Bens 水下和上帝之光 ",
-        "prompt": "deep underwater, {prompt} highly detailed,  intricate lighting, god rays",
-        "negative_prompt": "ugly, deformed, noisy, blurry, low contrast,",
+        "name": "网红 - 撸猫/狗 (Pet Lover)",
+        "prompt": "{prompt}, holding a cute cat or dog close to face, home living room background, natural smile, soft window light, wholesome vibe, authentic texture",
+        "negative_prompt": "scary animal, zoo, outdoor, studio",
     },
 ]
 
@@ -3075,7 +3451,7 @@ class StyleSelectorNodeZhex:
     并将输入的文本应用到所选风格的提示词模板中。
     当 "random_style" 开启时，每次生成都会自动随机选择一个新风格。
     """
-    
+
     style_names = [style["name"] for style in style_list]
 
     @classmethod
@@ -3086,8 +3462,9 @@ class StyleSelectorNodeZhex:
         """
         return {
             "required": {
-                "prompt": ("STRING", {"multiline": True, "default": "a beautiful landscape"}),
-                "style_name": (cls.style_names, ),
+                "prompt1": ("STRING", {"multiline": True, "default": "一个可爱日本女团成员,圆脸,软软的面颊,婴儿肥,可爱,柔和五官,无辜感,淡妆,微胖的脸"}),
+                "prompt2": ("STRING", {"multiline": True, "default": ""}),
+                "style_name": (cls.style_names,),
                 "random_style": ("BOOLEAN", {"default": False}),
             }
         }
@@ -3098,7 +3475,7 @@ class StyleSelectorNodeZhex:
     CATEGORY = "Utilities/Text"
 
     @classmethod
-    def IS_CHANGED(cls, prompt, style_name, random_style):
+    def IS_CHANGED(cls, prompt1, prompt2, style_name, random_style):
         """
         这个方法是实现自动随机的关键。
         """
@@ -3111,28 +3488,37 @@ class StyleSelectorNodeZhex:
             # 这样ComfyUI就可以正常使用缓存。
             return None
 
-    def apply_style(self, prompt, style_name, random_style): # 不再需要 seed 参数
+    def apply_style(
+        self, prompt1, prompt2, style_name, random_style
+    ):  # 不再需要 seed 参数
         """
         节点的核心逻辑。
         """
+        prompt = prompt1 + prompt2
         selected_style = None
 
         if random_style:
             # 过滤掉 '(None)' 风格
             eligible_styles = [s for s in style_list if s["name"] != "(None)"]
-            
+
             if not eligible_styles:
-                selected_style = next((style for style in style_list if style["name"] == "(None)"), None)
+                selected_style = next(
+                    (style for style in style_list if style["name"] == "(None)"), None
+                )
             else:
                 selected_style = random.choice(eligible_styles)
-            
+
             if selected_style:
                 # 在控制台打印，方便调试和确认
-                print(f"[StyleSelectorNode] Auto-randomly selected style: {selected_style['name']}")
+                print(
+                    f"[StyleSelectorNode] Auto-randomly selected style: {selected_style['name']}"
+                )
 
         else:
             # 如果不使用随机，则执行原始逻辑
-            selected_style = next((style for style in style_list if style["name"] == style_name), None)
+            selected_style = next(
+                (style for style in style_list if style["name"] == style_name), None
+            )
 
         if selected_style:
             prompt_template = selected_style["prompt"]
@@ -3140,7 +3526,7 @@ class StyleSelectorNodeZhex:
 
             positive_prompt_out = prompt_template.replace("{prompt}", prompt)
             negative_prompt_out = negative_prompt_template.replace("{prompt}", prompt)
-            
+
             return (positive_prompt_out, negative_prompt_out)
         else:
             return (prompt, "")
