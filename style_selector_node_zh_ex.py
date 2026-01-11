@@ -2,7 +2,6 @@
 # 这是一个ComfyUI的自定义节点
 # 功能：根据用户选择的风格，将输入的文本应用到预设的提示词模板中。
 # -----------------------------------------------------------------
-
 # 1. 定义你的风格列表
 # 你可以在这里添加、删除或修改任何风格。
 # "name": 将会显示在节点的下拉菜单中。
@@ -55,6 +54,36 @@ style_list = [
         "name": "青春 - 视线交汇 (上课偷看)",
         "prompt": "{prompt}, classroom setting, sitting at desk, resting chin on hand, looking at viewer (POV), suddenly realizing eye contact, flustered, trying to hide face with book, sunlight streaming through window, dreamy atmosphere",
         "negative_prompt": "sleeping, studying hard, teacher",
+    },
+    {
+        "name": "王道 - 地雷系 (Jirai Kei)",
+        "prompt": "{prompt}, 地雷ファッション、フリルドレス、猫耳ヘッドドレス、病的な可愛さ、魅惑的な雰囲気、柔らかい間接照明、魅惑的な目、高解像度、クローズアップ。",
+        "negative_prompt": "爽やか, アウトドア, 自然光, シンプル, カジュアル, 明るすぎる, 笑顔全開, 低解像度, 崩れた指",
+    },
+    {
+        "name": "王道 - 地雷系MV (キャンディ・スイート風 DEMO)",
+        "prompt": "{prompt}, 地雷ファッション, J-POPアイドルの写真, パステルカラーの色調, 柔らかい拡散光, ハイキー, 鮮やかだがソフトな色彩, カワイイ（Kawaii）美学, 商業用ミュージックビデオ風, 幻想的なボケ味, ドールメイク",
+        "negative_prompt": "暗い, 陰気, 低コントラスト, 鋭い, モノクロ, 写実的なストリート, ホラー, ざらついた質感",
+    },
+    {
+        "name": "王道 - アイドルMV (キャンディ・スイート風 DEMO)",
+        "prompt": "{prompt}, J-POPアイドルの写真, パステルカラーの色調, 柔らかい拡散光, ハイキー, 鮮やかだがソフトな色彩, カワイイ（Kawaii）美学, 商業用ミュージックビデオ風, 幻想的なボケ味, ドールメイク",
+        "negative_prompt": "暗い, 陰気, 低コントラスト, 鋭い, モノクロ, 写実的なストリート, ホラー, ざらついた質感",
+    },
+    {
+        "name": "王道 - アイドルMV (キャンディ・スイート風)",
+        "prompt": "{prompt}, J-POPアイドルの写真, リボン付きツインテール, フリルの付いたアイドル衣装, パステルカラーの色調, 満開の花畑の背景, 柔らかい拡散光, ハイキー, 鮮やかだがソフトな色彩, ゆめかわいい（Kawaii）, 商業用ミュージックビデオ風, 幻想的なボケ味, ドールメイク, 濃いめのチーク",
+        "negative_prompt": "暗い, 陰気, 低コントラスト, 鋭い, モノクロ, 写実的なストリート, ホラー, ざらついた質感",
+    },
+    {
+        "name": "王道 - 拍立得风格 (Cheki Style)",
+        "prompt": "{prompt}, 王道アイドル, チェキ風, ポラロイド風, インスタントカメラ, 直射フラッシュ, フラッシュ撮影, 粒子感, ローファイ, 距離感近い, 楽屋裏, 少しボケた背景, リアルな質感",
+        "negative_prompt": "高画質すぎる, 4k, 8k, スタジオ照明, 滑らかすぎる肌, 3Dレンダリング, 完璧すぎる構図",
+    },
+    {
+        "name": "王道 - 偶像MV (糖果甜美风DEMO)",
+        "prompt": "{prompt}, J-pop idol photography,  pastel color palette, soft diffused lighting, high key, vibrant but soft colors, kawaii aesthetic, commercial music video look, dreamy bokeh, doll-like makeup",
+        "negative_prompt": "dark, gloomy, low contrast, edgy, monochrome, realistic street, horror, gritty",
     },
     {
         "name": "王道 - 偶像MV (糖果甜美风)",
@@ -3443,28 +3472,241 @@ style_list = [
         "negative_prompt": "scary animal, zoo, outdoor, studio",
     },
 ]
+juese_list = [
+    {"name": "(None)", "prompt": ""},
+    {
+        "name": "FeiFei",
+        "prompt": "Name: FeiFei,Gender: ChongQing Female,Age: 19,Height: 5'7\" (170 cm),Weight: 125 lbs (56.7 kg),Body Type: Petite and toned, with a curvy silhouette,Physical Description: Skin: Clear, translucent, natural texture; with a subtle Korean glow,Facial Structure: Delicate features, and full lips that curve upwards in an inviting smile,Figure: Hourglass, with a toned physique honed from years of rigorous training and performance schedule; ",
+    },
+    {
+        "name": "松本ももな (Royal Road Idol - 王道アイドル)",
+        "prompt": "名前: 松本ももな, 性別: 女性, 年齢: 21歳, 身長: 159cm, 体重: 非公開（スリム）, 体型: 華奢で柔らかく女性らしいアイドル体型, 髪色: ロングのダークブラウンヘア, ストレートのシースルーバング（ぱっつん前髪）, 顔周りを縁取るサイドヘア（姫カット要素/触角ヘア）, 目の色: 大きく丸い表現力豊かな焦げ茶色の瞳, 少しタレ目, 身体的特徴: 肌: 陶器のような白肌, 透明感; 顔立ち: 小顔, ぷっくりとした涙袋, 長いまつ毛, 小さな鼻; スタイル: 細いウエスト, 王道カワイイ美学。",
+    },
+    {
+        "name": "松本ももな (Twin Tails - ツインテール)",
+        "prompt": "名前: 松本ももな, 性別: 女性, 年齢: 20歳, 身長: 159cm, 体重: スリム, 体型: 小柄でキュート, 髪色: ダークブラウンのツインテール（リボン付き）, ストレートのシースルーバング, 顔周りの長い後れ毛, 目の色: 大きな丸いタレ目, 表情豊か, 身体的特徴: 肌: 陶器のような白肌; 顔立ち: 丸みのある童顔, 涙袋強調, 長いまつ毛; スタイル: 華奢なフレーム, 元気でカワイイ雰囲気。",
+    },
+    {
+        "name": "松本ももな (High Twin Tails - 高めツインテール)",
+        "prompt": "名前: 松本ももな, 性別: 女性, 年齢: 20歳, 身長: 159cm, 体重: スリム, 体型: 小柄でキュート, 髪色: ダークブラウンの高めツインテール（リボン付き）, ストレートのシースルーバング, 顔周りの長い後れ毛, 目の色: 大きな丸いタレ目, 表情豊か, 身体的特徴: 肌: 陶器のような白肌; 顔立ち: 丸みのある童顔, 涙袋強調, 長いまつ毛; スタイル: 華奢なフレーム, 元気でカワイイ雰囲気。",
+    },
+    {
+        "name": "松本ももな (Natural Hair - ナチュラルヘア/デート風)",
+        "prompt": "名前: 松本ももな, 性別: 女性, 年齢: 21歳, 場所: カフェ / 東京の街角, 身長: 159cm, 体重: スリム, 体型: 柔らかく女性らしい, 髪色: おろしたロングのダークブラウンヘア, 柔らかな毛先のストレート, トレードマークのシースルーバング（ぱっつん）, 姫カット気味のサイドヘア, 目の色: 優しげな大きな焦げ茶色の瞳, 身体的特徴: 肌: 色白で透明感がある; 顔立ち: 柔らかな卵型, 可愛い鼻, ぷっくりとしたピンクの唇; スタイル: スリムだが柔らかい質感, 彼女感, トレンディなカジュアルファッションやニットウェア, 上品で清楚な雰囲気。",
+    },
+    {
+        "name": "Matsumoto Momona (Royal Road Idol)",
+        "prompt": "Name: Matsumoto Momona, Gender: Female, Age: 21, Height: 5'2\" (159 cm), Weight: Secret (Slender), Body Type: Petite, soft and feminine idol physique, Hair Color: Long dark brown hair, styled with straight see-through bangs (pattsun) and distinct face-framing side locks (hime cut elements), Eye Color: Large, round, expressive dark brown eyes with a slight droop (tareme), Physical Description: Skin: Pale porcelain skin, translucent and soft; Facial Structure: Small youthful round face (kogao), prominent puffy aegyosal (tear bags) under eyes, long eyelashes, small button nose; Figure: Slender frame, narrow waist, Kawaii aesthetic.",
+    },
+    {
+        "name": "Matsumoto Momona (Twin Tails)",
+        "prompt": "Name: Matsumoto Momona, Gender: Female, Age: 20, Height: 5'2\" (159 cm), Weight: Slender, Body Type: Petite and cute, Hair Color: Dark brown hair styled in twin tails (pigtails) with ribbons, straight see-through bangs, long side bangs framing the face, Eye Color: Large round droopy eyes (tareme), expressive, Physical Description: Skin: Pale porcelain skin; Facial Structure: Small round youthful face, prominent aegyosal (puffy under-eyes), long eyelashes; Figure: Petite frame, energetic and kawaii vibe.",
+    },
+    {
+        "name": "Matsumoto Momona (High Twin Tails)",
+        "prompt": "Name: Matsumoto Momona, Gender: Female, Age: 20, Height: 5'2\" (159 cm), Weight: Slender, Body Type: Petite and cute, Hair Color: Dark brown hair styled in high twin tails (pigtails) with ribbons, straight see-through bangs, long side bangs framing the face, Eye Color: Large round droopy eyes (tareme), expressive, Physical Description: Skin: Pale porcelain skin; Facial Structure: Small round youthful face, prominent aegyosal (puffy under-eyes), long eyelashes; Figure: Petite frame, energetic and kawaii vibe.",
+    },
+    {
+        "name": "Matsumoto Momona (Natural Hair)",
+        "prompt": "Name: Matsumoto Momona, Gender: Female, Age: 21, Location: Cafe / Tokyo Street, Height: 5'2\" (159 cm), Weight: Slender, Body Type: Soft and feminine, Hair Color: Long loose dark brown hair, straight texture with soft ends, signature straight see-through bangs (pattsun), distinct hime-cut side locks, Eye Color: Large dark brown eyes with a gentle gaze, Physical Description: Skin: Fair and translucent; Facial Structure: Soft oval face, cute button nose, plump pink lips; Figure: Slender but soft, girlfriend aesthetic, wearing trendy casual fashion or knitwear, elegant and pure vibe.",
+    },
+    {
+        "name": "Samantha Johnson",
+        "prompt": "Name: Samantha Johnson,Gender: Female,Age: 25,Location: Brooklyn, New York,Height: 5'8\",Weight: 180 lbs,Body Type: Petite yet voluptuous,Hair Color: Honey Blonde (shoulder-length),Eye Color: Bright Blue,Tattoos: None,Piercings: Ears only,Physical Description: Skin: Smooth, luminous, and unblemished; a natural sun-kissed glow,Facial Structure: Petite features, heart-shaped face, high cheekbones, and full lips,Figure: Hourglass, with curves in all the right places; 38D bust, 26-inch waist, 40-inch hips,",
+    },
+    {
+        "name": "new york blond model",
+        "prompt": "ultra detailed, cinematic, a photograph of an attractive young female new york blond model, hyperrealistic, 8k, masterpiece,cinematic lighting,",
+    },
+    {"name": "K-pop idol", "prompt": "A beautiful Korean woman, K-pop idol style,"},
+    {
+        "name": "blonde woman",
+        "prompt": "a stunningly beautiful blonde woman with blue eyes, smile,",
+    },
+    {
+        "name": "Ji-Woo (Seoul Elegant)",
+        "prompt": "Name: Ji-Woo,Gender: Female,Age: 22,Location: Gangnam, Seoul,Height: 5'7\" (170 cm),Weight: 118 lbs,Body Type: Slender and graceful, like a ballerina,Hair Color: Jet Black (long, straight, silky sheen),Eye Color: Dark Hazel, almond-shaped,Physical Description: Skin: Pale porcelain, glass skin texture, flawless; Facial Structure: Oval face, soft jawline, refined nose bridge; Figure: Willowy, 33B bust, 23-inch waist, 35-inch hips, elegant posture.",
+    },
+    {
+        "name": "Hana (Tokyo Street)",
+        "prompt": "Name: Hana,Gender: Female,Age: 20,Location: Harajuku, Tokyo,Height: 5'4\" (162 cm),Weight: 110 lbs,Body Type: Petite and trendy,Hair Color: Pastel Pink bob cut with blunt bangs,Eye Color: Large dark brown eyes, expressive,Physical Description: Skin: Fair with a rosy undertone; Facial Structure: Round youthful face, small chin, cute button nose; Figure: Petite frame, 32B bust, 24-inch waist, 34-inch hips, streetwear aesthetic.",
+    },
+    {
+        "name": "Min-Seo (K-pop Visual)",
+        "prompt": "Name: Min-Seo,Gender: Female,Age: 21,Location: Seoul,Height: 5'6\" (168 cm),Weight: 120 lbs,Body Type: Fit and toned, dancer's physique,Hair Color: Ash Grey (wavy, waist-length),Eye Color: Deep Brown, sharp cat-eye makeup,Physical Description: Skin: Milky white, luminous stage-ready glow; Facial Structure: V-line jaw, high cheekbones, plump heart-shaped lips; Figure: Toned abs, 34C bust, 23-inch waist, 36-inch hips, charismatic aura.",
+    },
+    {
+        "name": "Aiko (Kyoto Classic)",
+        "prompt": "Name: Aiko,Gender: Female,Age: 24,Location: Kyoto, Japan,Height: 5'5\" (165 cm),Weight: 115 lbs,Body Type: Soft and feminine,Hair Color: Natural Black (medium length, soft layers),Eye Color: Soft Brown, gentle gaze,Physical Description: Skin: Clear, translucent, natural texture; Facial Structure: Soft features, gentle arching eyebrows, mole under left eye; Figure: Hourglass leaning towards slender, 33C bust, 25-inch waist, 36-inch hips, traditional beauty.",
+    },
+    {
+        "name": "Yuna (Jeju Sun-kissed)",
+        "prompt": "Name: Yuna,Gender: Female,Age: 23,Location: Jeju Island,Height: 5'8\" (172 cm),Weight: 128 lbs,Body Type: Athletic and curvy,Hair Color: Dark Brown with sun-bleached highlights,Eye Color: Warm Amber,Physical Description: Skin: Light tan, healthy glow, slight freckles across nose; Facial Structure: Defined jawline, bright smile, dimples; Figure: Sporty, toned legs, 35C bust, 26-inch waist, 38-inch hips, beach vibe.",
+    },
+    {
+        "name": "Rin (Cyberpunk Tokyo)",
+        "prompt": "Name: Rin,Gender: Female,Age: 19,Location: Shinjuku, Tokyo,Height: 5'5\" (165 cm),Weight: 112 lbs,Body Type: Slim and edgy,Hair Color: Silver with Blue tips (wolf cut),Eye Color: Black (often wears colored contacts),Physical Description: Skin: Pale, cool undertone; Facial Structure: Sharp chin, piercing gaze, straight eyebrows; Figure: Thin, 32A bust, 23-inch waist, 33-inch hips, cyberpunk fashion style.",
+    },
+    {
+        "name": "So-Young (High Fashion)",
+        "prompt": "Name: So-Young,Gender: Female,Age: 26,Location: Seoul,Height: 5'10\" (178 cm),Weight: 125 lbs,Body Type: Tall and statuette-like, supermodel build,Hair Color: Sleek Black (slicked back or short crop),Eye Color: Monolid, dark and intense,Physical Description: Skin: Matte, flawless, high fashion makeup; Facial Structure: Very defined cheekbones, angular face, unique beauty; Figure: Lean, 32B bust, 24-inch waist, 35-inch hips, editorial look.",
+    },
+    {
+        "name": "Miyu (Osaka Cute)",
+        "prompt": "Name: Miyu,Gender: Female,Age: 18,Location: Osaka,Height: 5'2\" (158 cm),Weight: 105 lbs,Body Type: Petite and voluptuous,Hair Color: Chestnut Brown (twin tails or loose curls),Eye Color: Big round brown eyes,Physical Description: Skin: Peach fuzz texture, soft blush; Facial Structure: Round face, large eyes, innocent expression; Figure: Curvy for her size, 34D bust, 24-inch waist, 35-inch hips, gravure idol style.",
+    },
+    {
+        "name": "Eun-Ji (Office Chic)",
+        "prompt": "Name: Eun-Ji,Gender: Female,Age: 27,Location: Busan,Height: 5'6\" (168 cm),Weight: 122 lbs,Body Type: Professional and fit,Hair Color: Dark Chocolate (shoulder length bob),Eye Color: Dark Brown, intelligent gaze,Physical Description: Skin: Natural beige, hydrated; Facial Structure: Balanced features, straight nose, confident smile; Figure: Proportional, 34C bust, 25-inch waist, 37-inch hips, smart casual style.",
+    },
+    {
+        "name": "Kaori (Natural Beauty)",
+        "prompt": "Name: Kaori,Gender: Female,Age: 25,Location: Hokkaido,Height: 5'7\" (170 cm),Weight: 120 lbs,Body Type: Average and healthy,Hair Color: Virgin Black, long and heavy,Eye Color: Dark Brown,Physical Description: Skin: Very pale, winter vibes, clear; Facial Structure: Classic Japanese beauty, oval face; Figure: Natural curves, 34C bust, 26-inch waist, 37-inch hips, minimal makeup aesthetic.",
+    },
+    {
+        "name": "Mia (Brooklyn Artsy)",
+        "prompt": "Name: Mia,Gender: Female,Age: 23,Location: Brooklyn, NYC,Height: 5'5\" (165 cm),Weight: 125 lbs,Body Type: Average build, relaxed posture,Hair Color: Dark Brown (messy bun or beach waves),Eye Color: Hazel Green,Physical Description: Skin: Freckled across nose and cheeks, natural texture; Facial Structure: Heart face, expressive eyebrows; Figure: Soft curves, 34C bust, 27-inch waist, 38-inch hips, indie hipster vibe.",
+    },
+    {
+        "name": "Olivia (Redhead Stunner)",
+        "prompt": "Name: Olivia,Gender: Female,Age: 26,Location: Soho, NYC,Height: 5'7\" (170 cm),Weight: 135 lbs,Body Type: Voluptuous hourglass,Hair Color: Fiery Red (natural curls),Eye Color: Emerald Green, piercing,Physical Description: Skin: Pale, milky, scattered freckles; Facial Structure: Strong jawline, full lips, captivating gaze; Figure: Curvy, 36D bust, 26-inch waist, 40-inch hips, cinematic beauty.",
+    },
+    {
+        "name": "Zoe (Fitness Model)",
+        "prompt": "Name: Zoe,Gender: Female,Age: 22,Location: Gym/Central Park, NYC,Height: 5'8\" (173 cm),Weight: 140 lbs,Body Type: Athletic, muscular definition,Hair Color: Dirty Blonde (high ponytail),Eye Color: Blue-Grey,Physical Description: Skin: Tanned, sweaty sheen, healthy; Facial Structure: Sharp features, determined look; Figure: Muscular legs, six-pack abs, 34C bust, 25-inch waist, 37-inch hips, activewear style.",
+    },
+    {
+        "name": "Ava (Runway High Fashion)",
+        "prompt": "Name: Ava,Gender: Female,Age: 21,Location: New York Fashion Week,Height: 5'11\" (180 cm),Weight: 120 lbs,Body Type: Very tall and thin, clothes hanger frame,Hair Color: Platinum White (short pixie cut),Eye Color: Steel Grey,Physical Description: Skin: Alabaster, matte finish; Facial Structure: Extreme cheekbones, hollow cheeks, alien-esque beauty; Figure: Runway standard, 32A bust, 23-inch waist, 34-inch hips, avant-garde.",
+    },
+    {
+        "name": "Harper (Edgy Tattoo)",
+        "prompt": "Name: Harper,Gender: Female,Age: 25,Location: East Village, NYC,Height: 5'6\" (168 cm),Weight: 128 lbs,Body Type: Fit with ink,Hair Color: Black with purple streaks,Eye Color: Dark Brown, heavy eyeliner,Tattoos: Sleeves on both arms, neck tattoo,Physical Description: Skin: Fair, contrasting with tattoos; Facial Structure: Pierced nose, septum ring, sharp chin; Figure: Toned, 34B bust, 25-inch waist, 36-inch hips, grunge aesthetic.",
+    },
+    {
+        "name": "Grace (Commercial Blonde)",
+        "prompt": "Name: Grace,Gender: Female,Age: 22,Location: Hamptons/NYC,Height: 5'7\" (170 cm),Weight: 125 lbs,Body Type: Classic slim, girl-next-door,Hair Color: Honey Blonde (straight),Eye Color: Bright Blue, inviting,Physical Description: Skin: Rosy, sun-kissed, clean; Facial Structure: Symmetrical, wide smile, approachable; Figure: Balanced, 34B bust, 25-inch waist, 36-inch hips, catalogue model style.",
+    },
+    {
+        "name": "Maya (Afro Chic)",
+        "prompt": "Name: Maya,Gender: Female,Age: 23,Location: Harlem, NYC,Height: 5'9\" (175 cm),Weight: 135 lbs,Body Type: Statuesque and toned,Hair Color: Black (natural afro or braids),Eye Color: Deep Dark Brown,Physical Description: Skin: Deep rich cocoa, luminous, high contrast; Facial Structure: High cheekbones, full nose, regal bearing; Figure: Long limbs, 34B bust, 24-inch waist, 36-inch hips, artistic and bold.",
+    },
+    {
+        "name": "Lily (Plus Size Editorial)",
+        "prompt": "Name: Lily,Gender: Female,Age: 25,Location: NYC Studio,Height: 5'8\" (173 cm),Weight: 200 lbs,Body Type: Plus size, soft and luscious,Hair Color: Strawberry Blonde,Eye Color: Green,Physical Description: Skin: Creamy, soft focus, cellulites (realistic detail); Facial Structure: Full face, double chin (slight), beautiful eyes; Figure: Big beautiful woman (BBW), 42DD bust, 36-inch waist, 48-inch hips, confident and romantic.",
+    },
+    {
+        "name": "Alexandra (Manhattan - Upper East Side)",
+        "prompt": "Name: Alexandra,Gender: Female,Age: 24,Location: Manhattan, NYC,Height: 5'10\" (178 cm),Weight: 132 lbs,Body Type: Statuesque, old money grace,Hair Color: Champagne Blonde (classic chignon),Eye Color: Sapphire Blue,Physical Description: Skin: Porcelain, flawless; Facial Structure: High cheekbones, defined jawline, serene expression; Figure: Long-limbed, athletic from tennis and riding, 34B-25-35, exudes quiet confidence.",
+    },
+    {
+        "name": "Madison (SoHo)",
+        "prompt": "Name: Madison,Gender: Female,Age: 22,Location: Manhattan, NYC,Height: 5'8\" (173 cm),Weight: 125 lbs,Body Type: Influencer fit, trendy and toned,Hair Color: Honey Balayage (perfectly tousled waves),Eye Color: Warm Brown,Physical Description: Skin: Flawless spray tan; Facial Structure: Full lips, button nose, expertly contoured, always camera-ready; Figure: Curvy yet athletic, 34C-24-36, dressed in the latest designer drops.",
+    },
+    {
+        "name": "Sasha (East Village)",
+        "prompt": "Name: Sasha,Gender: Female,Age: 20,Location: Manhattan, NYC,Height: 5'11\" (180 cm),Weight: 128 lbs,Body Type: High-fashion editorial, angular and lean,Hair Color: Icy Platinum Blonde (blunt bob),Eye Color: Piercing Ice-Blue,Physical Description: Skin: Translucent pale; Facial Structure: Extremely sharp cheekbones, strong brow, pouty lips, an intense gaze; Figure: Runway-ready, very slender, 32A-23-34, moves with a captivating strangeness.",
+    },
+    {
+        "name": "Blair (Park Avenue)",
+        "prompt": "Name: Blair,Gender: Female,Age: 22,Location: Manhattan, NYC,Height: 5'7\" (170 cm),Weight: 120 lbs,Body Type: Petite and polished, preppy perfection,Hair Color: Rich Brunette (glossy, straight),Eye Color: Deep Chocolate Brown,Physical Description: Skin: Creamy and clear; Facial Structure: Heart-shaped face, sharp nose, often wearing a headband, a mischievous smirk; Figure: Slender and compact, 32B-24-34, always impeccably dressed in tailored outfits.",
+    },
+    {
+        "name": "Kylie (Tribeca)",
+        "prompt": "Name: Kylie,Gender: Female,Age: 20,Location: Manhattan, NYC,Height: 5'9\" (175 cm),Weight: 135 lbs,Body Type: BBL-inspired hourglass, surgically enhanced,Hair Color: Stark White Blonde (long extensions),Eye Color: Contact-enhanced Hazel,Physical Description: Skin: Perfectly airbrushed tan; Facial Structure: Full, glossy lips, defined jaw, dramatic makeup; Figure: Exaggerated curves, 34D-25-39, always showcasing logos and luxury brands.",
+    },
+    {
+        "name": "Luna (Chelsea)",
+        "prompt": "Name: Luna,Gender: Female,Age: 21,Location: Manhattan, NYC,Height: 5'10\" (178 cm),Weight: 130 lbs,Body Type: Healthy and athletic, Victoria's Secret-esque,Hair Color: Dark Brown Curls (voluminous and natural),Eye Color: Golden Brown,Physical Description: Skin: Sun-kissed, glowing olive complexion; Facial Structure: Bright smile, full cheeks, friendly and approachable features; Figure: Toned and strong, 34B-24-35, embodies commercial appeal.",
+    },
+    {
+        "name": "Eleanor (The Carlyle)",
+        "prompt": "Name: Eleanor,Gender: Female,Age: 23,Location: Manhattan, NYC,Height: 5'9\" (175 cm),Weight: 135 lbs,Body Type: Equestrian build, strong and graceful,Hair Color: Auburn Red (elegant low ponytail),Eye Color: Emerald Green,Physical Description: Skin: Fair with a light dusting of freckles; Facial Structure: Classic Roman nose, strong jaw, aristocratic bearing; Figure: Athletic legs and toned arms, 34B-26-36, carries herself with an inherited sense of ease.",
+    },
+    {
+        "name": "Skylar (Hudson Yards)",
+        "prompt": "Name: Skylar,Gender: Female,Age: 23,Location: Manhattan, NYC,Height: 6'0\" (183 cm),Weight: 140 lbs,Body Type: Amazonian, sharp and modern,Hair Color: Jet Black (sleek, glass-like finish),Eye Color: Dark Grey,Physical Description: Skin: Pale and smooth; Facial Structure: Strikingly angular face, piercing gaze, minimalist makeup; Figure: Tall and powerful, 34C-26-37, prefers architectural fashion and avant-garde designers.",
+    },
+    {
+        "name": "Anja (Bushwick)",
+        "prompt": "Name: Anja,Gender: Female,Age: 22,Location: Manhattan, NYC,Height: 5'11.5\" (182 cm),Weight: 125 lbs,Body Type: Androgynous, haute couture frame,Hair Color: Bleached Buzzcut,Eye Color: Pale Green,Physical Description: Skin: Fair, almost ethereal; Facial Structure: Prominent cheekbones, delicate but strong jaw, large expressive eyes, a blank canvas; Figure: Extremely lean, boyish hips, 32A-23-33, a chameleon on the runway.",
+    },
+    {
+        "name": "Victoria (Fifth Avenue)",
+        "prompt": "Name: Victoria,Gender: Female,Age: 24,Location: Manhattan, NYC,Height: 5'8\" (173 cm),Weight: 128 lbs,Body Type: Poised and refined, classic beauty,Hair Color: Dark Honey Blonde (perfectly coiffed),Eye Color: Forest Green,Physical Description: Skin: Smooth ivory; Facial Structure: Oval face, graceful neck, a calm and knowing smile; Figure: Balanced and elegant, 34B-25-35, never seen without pearls or a family heirloom.",
+    },
+    {
+        "name": "Genesis (Billionaires' Row)",
+        "prompt": "Name: Genesis,Gender: Female,Age: 21,Location: Manhattan, NYC,Height: 5'9\" (175 cm),Weight: 130 lbs,Body Type: Exotic bombshell, meticulously curated,Hair Color: Deep Espresso Brown (floor-length extensions),Eye Color: Amber,Physical Description: Skin: Golden-brown, luminous; Facial Structure: Cat-like eyes, high cheekbones, plump lips, an alluring and mysterious vibe; Figure: Sculpted hourglass, 32DD-24-38, draped in rare and extravagant couture.",
+    },
+    {
+        "name": "Mei (FiDi)",
+        "prompt": "Name: Mei,Gender: Female,Age: 20,Location: Manhattan, NYC,Height: 5'10\" (178 cm),Weight: 122 lbs,Body Type: Slender and versatile, commercial to editorial,Hair Color: Long, Straight Black (silky sheen),Eye Color: Dark Almond-shaped,Physical Description: Skin: Flawless porcelain; Facial Structure: Delicate oval face, subtle nose, serene expression, highly adaptable features; Figure: Willowy and lithe, 32A-24-34, perfect for both beauty campaigns and runway.",
+    },
+    {
+        "name": "Caroline (Gramercy Park)",
+        "prompt": "Name: Caroline,Gender: Female,Age: 21,Location: Manhattan, NYC,Height: 5'9\" (175 cm),Weight: 128 lbs,Body Type: Quiet luxury, slender and understated,Hair Color: Light Ash Brown (natural waves),Eye Color: Soft Hazel,Physical Description: Skin: Fair and natural; Facial Structure: Gentle features, intelligent eyes, a thoughtful expression; Figure: Lean and graceful, 32B-25-35, favors cashmere, silk, and unbranded high-quality pieces.",
+    },
+    {
+        "name": "Savannah (West Village)",
+        "prompt": "Name: Savannah,Gender: Female,Age: 22,Location: Manhattan, NYC,Height: 5'8\" (173 cm),Weight: 125 lbs,Body Type: Boho-chic, LA-transplant vibe,Hair Color: Sun-Kissed Blonde (beachy waves),Eye Color: Ocean Blue,Physical Description: Skin: Naturally tanned and freckled; Facial Structure: Girl-next-door smile, upturned nose, face of a social media darling; Figure: Toned from yoga and pilates, 34B-24-36, her 'casual' look costs thousands.",
+    },
+    {
+        "name": "Gia (Alphabet City)",
+        "prompt": "Name: Gia,Gender: Female,Age: 23,Location: Manhattan, NYC,Height: 5'9\" (175 cm),Weight: 130 lbs,Body Type: Off-duty model chic, strong and healthy,Hair Color: Dark Chestnut Brown (shag cut),Eye Color: Deep Brown,Physical Description: Skin: Olive, warm undertones; Facial Structure: Strong Italian features, thick eyebrows, full lips, a confident and slightly tough demeanor; Figure: Athletic build, defined abs, 34B-25-36, usually in vintage leather and denim.",
+    },
+    {
+        "name": "Isabelle (Sutton Place)",
+        "prompt": "Name: Isabelle,Gender: Female,Age: 23,Location: Manhattan, NYC,Height: 5'11\" (180 cm),Weight: 135 lbs,Body Type: Ballerina's grace, delicate but tall,Hair Color: Ash Blonde (tied in a silk scarf),Eye Color: Stormy Grey,Physical Description: Skin: Pale, almost luminous; Facial Structure: Fine, aristocratic features, long neck, looks like a living portrait; Figure: Long and lean, 32B-24-35, moves with ethereal elegance learned from years of ballet.",
+    },
+    {
+        "name": "Riley (NoMad)",
+        "prompt": "Name: Riley,Gender: Female,Age: 23,Location: Manhattan, NYC,Height: 5'7\" (170 cm),Weight: 122 lbs,Body Type: Edgy tech-chic, petite and wiry,Hair Color: Metallic Silver (undercut),Eye Color: Electric Blue,Physical Description: Skin: Fair, with a few artistic tattoos; Facial Structure: Sharp elfin features, intelligent and intense eyes, a lip ring; Figure: Compact and toned, 32A-24-33, wears a mix of high-tech fabrics and designer streetwear.",
+    },
+    {
+        "name": "Freja (Williamsburg)",
+        "prompt": "Name: Freja,Gender: Female,Age: 21,Location: Manhattan, NYC,Height: 5'10.5\" (179 cm),Weight: 126 lbs,Body Type: Scandinavian minimalist, naturally slender,Hair Color: Natural Flaxen Blonde (effortless shag),Eye Color: Pale Blue,Physical Description: Skin: Fair with light freckles across the nose; Facial Structure: Wide-set eyes, strong jaw, a fresh and clean look; Figure: Lanky and boyish, 32A-24-34, perfect for minimalist and avant-garde brands.",
+    },
+    {
+        "name": "Isabella (Latina Glam)",
+        "prompt": "Name: Isabella,Gender: Female,Age: 24,Location: Bronx/Manhattan,Height: 5'6\" (168 cm),Weight: 145 lbs,Body Type: Thick and curvy (bootylicious),Hair Color: Dark Espresso (long, voluminous waves),Eye Color: Honey Brown,Physical Description: Skin: Caramel, warm golden undertones, glowing; Facial Structure: Full cheeks, luscious lips, perfectly arched brows; Figure: Pear-shaped, 36C bust, 26-inch waist, 42-inch hips, urban glam.",
+    },
+    {
+        "name": "Ava (Meatpacking District)",
+        "prompt": "Name: Ava,Gender: Female,Age: 24,Location: Manhattan, NYC,Height: 5'8\" (173 cm),Weight: 130 lbs,Body Type: Party girl physique, toned and ready for nightlife,Hair Color: Dark to Caramel Ombre (perfectly styled),Eye Color: Dark Brown,Physical Description: Skin: Flawlessly tanned and shimmering; Facial Structure: Seductive gaze, high cheekbones, always looks ready for a VIP lounge; Figure: Curvaceously toned, 34C-25-37, wears bodycon dresses and stilettos with ease.",
+    },
+    {
+        "name": "Chloe (Upper East Side)",
+        "prompt": "Name: Chloe,Gender: Female,Age: 24,Location: Manhattan, NYC,Height: 5'9\" (175 cm),Weight: 130 lbs,Body Type: Slim elegance, old money aesthetic,Hair Color: Golden Blonde (blowout style),Eye Color: Icy Blue,Physical Description: Skin: Lightly tanned, expensive glow; Facial Structure: High forehead, aristocratic nose, confident smirk; Figure: Tall and lean, 34B bust, 25-inch waist, 36-inch hips, polished look.",
+    },
+    {
+        "name": "Zoe (Lower East Side)",
+        "prompt": "Name: Zoe,Gender: Female,Age: 24,Location: Manhattan, NYC,Height: 5'11\" (180 cm),Weight: 135 lbs,Body Type: Powerful runway presence, athletic and statuesque,Hair Color: Natural Black Afro (short and well-shaped),Eye Color: Deep, Expressive Brown,Physical Description: Skin: Rich dark chocolate; Facial Structure: Full lips, high cheekbones, regal and commanding features; Figure: Strong shoulders, long legs, 34B-26-37, a commanding force on the catwalk.",
+    },
+]
 
 
 class StyleSelectorNodeZhex:
     """
-    一个自定义节点，它提供一个下拉菜单来选择一个风格，
-    并将输入的文本应用到所选风格的提示词模板中。
-    当 "random_style" 开启时，每次生成都会自动随机选择一个新风格。
+    修复后的自定义节点
     """
 
-    style_names = [style["name"] for style in style_list]
+    # 防止外部列表为空导致报错，加个判断或默认值
+    style_names = [s["name"] for s in style_list] if "style_list" in globals() else []
+    juese_names = [j["name"] for j in juese_list] if "juese_list" in globals() else []
 
     @classmethod
     def INPUT_TYPES(cls):
-        """
-        定义节点的输入。
-        我们不再需要 seed 输入框了。
-        """
         return {
             "required": {
-                "prompt1": ("STRING", {"multiline": True, "default": "一个可爱日本女团成员,圆脸,软软的面颊,婴儿肥,可爱,柔和五官,无辜感,淡妆,微胖的脸"}),
+                "prompt1": (
+                    "STRING",
+                    {"multiline": True, "default": "一个可爱日本王道女偶像..."},
+                ),
                 "prompt2": ("STRING", {"multiline": True, "default": ""}),
+                # 注意：如果列表为空，ComfyUI可能会报错，建议确保 list 不为空
                 "style_name": (cls.style_names,),
+                "juese_names": (cls.juese_names,),
                 "random_style": ("BOOLEAN", {"default": False}),
             }
         }
@@ -3475,61 +3717,80 @@ class StyleSelectorNodeZhex:
     CATEGORY = "Utilities/Text"
 
     @classmethod
-    def IS_CHANGED(cls, prompt1, prompt2, style_name, random_style):
-        """
-        这个方法是实现自动随机的关键。
-        """
+    def IS_CHANGED(cls, prompt1, prompt2, style_name, juese_names, random_style):
+        # 修复逻辑：如果有随机，返回时间戳；否则返回 NaN 或 None（标准做法返回 None 即可利用缓存）
         if random_style:
-            # 如果随机开关打开，我们返回一个纳秒级的时间戳。
-            # 这个值每次都保证是不同的，从而强制ComfyUI重新运行此节点。
             return time.time_ns()
-        else:
-            # 如果随机开关关闭，我们返回一个固定的值。
-            # 这样ComfyUI就可以正常使用缓存。
-            return None
+        return float("NaN")  # 或者 return None，但在某些版本为了强制更新并不常用 None
 
-    def apply_style(
-        self, prompt1, prompt2, style_name, random_style
-    ):  # 不再需要 seed 参数
-        """
-        节点的核心逻辑。
-        """
-        prompt = prompt1 + prompt2
+    def apply_style(self, prompt1, prompt2, style_name, juese_names, random_style):
+        # 1. 拼接基础提示词
+        # 加上空格防止粘连
+        prompt = f"{prompt1} {prompt2}".strip()
+
+        # 定义初始的负面提示词
+        current_negative = ""
+        # ===========================
+        # 第一步：处理角色 (Juese)
+        # 逻辑：先找到角色，把角色的 prompt 追加到你的输入 prompt 后面
+        # ===========================
+        selected_juese = next((j for j in juese_list if j["name"] == juese_names), None)
+
+        if (
+            selected_juese and selected_juese["name"] != "(None)"
+        ):  # 假设你有一个选项叫 (None)
+            # 获取角色提示词，如果没有则为空
+            juese_prompt = selected_juese.get("prompt", "")
+            juese_negative = selected_juese.get("negative_prompt", "")
+
+            # 将角色词追加到主提示词
+            prompt = f"{prompt}, {juese_prompt}"
+            current_negative = f"{current_negative}, {juese_negative}"
+        # ===========================
+        # 第二步：处理风格 (Style)
+        # 逻辑：将处理过角色的 prompt，填入风格的模板中
+        # ===========================
         selected_style = None
-
         if random_style:
-            # 过滤掉 '(None)' 风格
+            # 过滤掉无效风格
             eligible_styles = [s for s in style_list if s["name"] != "(None)"]
-
-            if not eligible_styles:
-                selected_style = next(
-                    (style for style in style_list if style["name"] == "(None)"), None
+            if eligible_styles:
+                selected_style = random.choice(eligible_styles)
+                print(
+                    f"[StyleSelector] Random style selected: {selected_style['name']}"
                 )
             else:
-                selected_style = random.choice(eligible_styles)
-
-            if selected_style:
-                # 在控制台打印，方便调试和确认
-                print(
-                    f"[StyleSelectorNode] Auto-randomly selected style: {selected_style['name']}"
+                # 如果没有可选风格，回落到当前选择
+                selected_style = next(
+                    (s for s in style_list if s["name"] == style_name), None
                 )
-
         else:
-            # 如果不使用随机，则执行原始逻辑
             selected_style = next(
-                (style for style in style_list if style["name"] == style_name), None
+                (s for s in style_list if s["name"] == style_name), None
             )
+        # 应用风格模板
+        if selected_style and selected_style["name"] != "(None)":
+            prompt_template = selected_style.get("prompt", "{prompt}")
+            negative_template = selected_style.get("negative_prompt", "")
+            # 替换模板中的 {prompt}
+            final_positive = prompt_template.replace("{prompt}", prompt)
 
-        if selected_style:
-            prompt_template = selected_style["prompt"]
-            negative_prompt_template = selected_style["negative_prompt"]
-
-            positive_prompt_out = prompt_template.replace("{prompt}", prompt)
-            negative_prompt_out = negative_prompt_template.replace("{prompt}", prompt)
-
-            return (positive_prompt_out, negative_prompt_out)
+            # 处理负面提示词
+            # 这里的逻辑看你需求：通常风格的负面提示词是固定的，或者追加
+            # 假设风格负面提示词模板里也有 {prompt}（虽然少见），如果没有，就直接拼接
+            if "{prompt}" in negative_template:
+                final_negative = negative_template.replace("{prompt}", current_negative)
+            else:
+                # 如果模板里没 {prompt}，通常意味着风格自带通用负面词，我们把之前的角色负面词加上去
+                final_negative = f"{negative_template}, {current_negative}".strip(", ")
         else:
-            return (prompt, "")
+            # 如果没选风格，就直接输出当前结果
+            final_positive = prompt
+            final_negative = current_negative
+        # 清理一下多余的逗号和空格
+        final_positive = final_positive.strip(", ")
+        final_negative = final_negative.strip(", ")
+        return (final_positive, final_negative)
 
 
 # -----------------------------------------------------------------
@@ -3537,5 +3798,4 @@ class StyleSelectorNodeZhex:
 #  这告诉ComfyUI如何加载和显示这个节点
 # -----------------------------------------------------------------
 NODE_CLASS_MAPPINGS = {"StyleSelectorNodeZhex": StyleSelectorNodeZhex}
-
 NODE_DISPLAY_NAME_MAPPINGS = {"StyleSelectorNodeZhex": "风格选择器扩展版"}
